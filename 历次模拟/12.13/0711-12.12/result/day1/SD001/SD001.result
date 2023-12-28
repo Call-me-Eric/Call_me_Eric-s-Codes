@@ -1,0 +1,27 @@
+{rgb 100 Compile successfully
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.047 construction is correct
+101 0 0.196 judge has a solution but player does not have
+101 10 0.218 construction is correct
+101 10 0.019 construction is correct
+101 10 0.015 construction is correct
+101 0 0.648 judge has a solution but player does not have
+101 10 0.407 construction is correct
+101 10 0.518 construction is correct
+}102 80
+{prime 100 Compile successfully
+101 10 0.359 Right Output!!!
+101 10 0.365 Right Output!!!
+101 10 0.415 Right Output!!!
+101 0 0.371 Player's string differs with the answer!
+101 0 0.373 Player's string differs with the answer!
+101 0 0.381 Player's string differs with the answer!
+101 0 0.372 Player's string differs with the answer!
+101 0 0.374 Player's string differs with the answer!
+101 0 0.430 Player's string differs with the answer!
+101 0 0.422 Player's string differs with the answer!
+}102 30
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

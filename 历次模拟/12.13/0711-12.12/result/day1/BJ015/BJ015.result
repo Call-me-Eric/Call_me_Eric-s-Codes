@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.001 construction is correct
+101 0 0.000 r, g, b conditions not met, used_r = 28, used_g = 1, used_b = 0
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+101 0 0.000 used.size() should be m
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+}102 10
+{prime 100 Compile successfully
+101 0 0.002 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 10 0.000 Right Output!!!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.001 Player's string differs with the answer!
+101 0 0.001 Player's string differs with the answer!
+101 10 0.002 Right Output!!!
+101 0 0.086 Player's string differs with the answer!
+101 0 1.118 Player's string differs with the answer!
+}102 20
+{young 100 Compile successfully
+101 10 0.093 Right Output!!!
+-103 0 2.075 Time out.
+-103 0 2.104 Time out.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-103 0 2.045 Time out.
+-108 0 0.000 Exceeding memory limit.
+}102 10

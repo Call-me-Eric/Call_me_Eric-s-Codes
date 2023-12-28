@@ -1,0 +1,27 @@
+{rgb 100 Compile successfully
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 used.size() should be m
+101 0 0.004 used.size() should be m
+101 0 0.191 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.001 used.size() should be m
+101 0 0.001 used.size() should be m
+101 0 0.001 used.size() should be m
+101 0 0.001 used.size() should be m
+101 0 0.000 used.size() should be m
+}102 0
+{prime 100 Compile successfully
+101 10 0.091 Right Output!!!
+-108 0 0.236 Exceeding memory limit.
+-108 0 0.080 Exceeding memory limit.
+-108 0 0.519 Exceeding memory limit.
+-108 0 0.068 Exceeding memory limit.
+-108 0 0.066 Exceeding memory limit.
+-108 0 0.091 Exceeding memory limit.
+-108 0 0.063 Exceeding memory limit.
+-108 0 0.391 Exceeding memory limit.
+-103 0 2.045 Time out.
+}102 10
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 0 0.000 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.002 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+}102 10
+{prime 100 Compile successfully
+101 10 0.038 Right Output!!!
+101 10 0.035 Right Output!!!
+101 10 0.050 Right Output!!!
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.006 Exceeding memory limit.
+-108 0 0.001 Exceeding memory limit.
+101 0 0.001 Player's string differs with the answer!
+101 0 0.002 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+}102 30
+{young 100 Compile successfully
+101 10 0.331 Right Output!!!
+-103 0 2.091 Time out.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+101 0 0.002 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+}102 10

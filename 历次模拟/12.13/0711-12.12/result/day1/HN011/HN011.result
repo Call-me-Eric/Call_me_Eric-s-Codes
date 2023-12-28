@@ -1,0 +1,45 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.021 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 10 0.001 construction is correct
+101 10 0.001 construction is correct
+}102 100
+{prime 100 Compile successfully
+101 10 1.039 Right Output!!!
+101 10 1.348 Right Output!!!
+101 10 1.273 Right Output!!!
+101 10 1.475 Right Output!!!
+101 10 1.615 Right Output!!!
+-103 0 2.085 Time out.
+-103 0 2.064 Time out.
+-103 0 2.058 Time out.
+-103 0 2.045 Time out.
+-103 0 2.064 Time out.
+}102 50
+{young 100 Compile successfully
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+-108 0 0.008 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.008 Exceeding memory limit.
+-108 0 0.007 Exceeding memory limit.
+-108 0 0.012 Exceeding memory limit.
+-108 0 0.006 Exceeding memory limit.
+101 0 0.004 Player's string differs with the answer!
+-108 0 0.005 Exceeding memory limit.
+}102 0

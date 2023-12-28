@@ -1,0 +1,48 @@
+{rgb 100 Compile successfully
+101 0 0.000 r, g, b conditions not met, used_r = 1, used_g = 2, used_b = 1
+101 0 0.000 r, g, b conditions not met, used_r = 13, used_g = 7, used_b = 9
+101 0 0.004 r, g, b conditions not met, used_r = 37, used_g = 51, used_b = 11
+101 0 0.049 r, g, b conditions not met, used_r = 73, used_g = 11, used_b = 15
+101 0 0.000 r, g, b conditions not met, used_r = 83, used_g = 78, used_b = 88
+101 0 0.000 r, g, b conditions not met, used_r = 115, used_g = 134, used_b = 0
+101 0 0.001 r, g, b conditions not met, used_r = 95, used_g = 54, used_b = 0
+101 0 0.000 r, g, b conditions not met, used_r = 81, used_g = 89, used_b = 79
+101 0 0.005 r, g, b conditions not met, used_r = 84, used_g = 84, used_b = 81
+101 0 0.000 r, g, b conditions not met, used_r = 89, used_g = 83, used_b = 77
+}102 0
+{rgb 100 Compile successfully
+101 0 0.001 r, g, b conditions not met, used_r = 1, used_g = 2, used_b = 1
+101 0 0.001 r, g, b conditions not met, used_r = 13, used_g = 7, used_b = 9
+101 0 0.004 r, g, b conditions not met, used_r = 37, used_g = 51, used_b = 11
+101 0 0.065 r, g, b conditions not met, used_r = 73, used_g = 11, used_b = 15
+101 0 0.000 r, g, b conditions not met, used_r = 83, used_g = 78, used_b = 88
+101 0 0.002 r, g, b conditions not met, used_r = 115, used_g = 134, used_b = 0
+101 0 0.001 r, g, b conditions not met, used_r = 95, used_g = 54, used_b = 0
+101 0 0.002 r, g, b conditions not met, used_r = 81, used_g = 89, used_b = 79
+101 0 0.000 r, g, b conditions not met, used_r = 84, used_g = 84, used_b = 81
+101 0 0.003 r, g, b conditions not met, used_r = 89, used_g = 83, used_b = 77
+}102 0
+{prime 100 Compile successfully
+101 10 1.278 Right Output!!!
+101 10 1.225 Right Output!!!
+101 10 1.188 Right Output!!!
+101 0 1.170 Player's string differs with the answer!
+101 0 1.296 Player's string differs with the answer!
+101 0 1.319 Player's string differs with the answer!
+101 0 1.302 Player's string differs with the answer!
+101 0 1.242 Player's string differs with the answer!
+101 0 1.237 Player's string differs with the answer!
+101 0 1.281 Player's string differs with the answer!
+}102 30
+{young 100 Compile successfully
+101 10 0.007 Right Output!!!
+101 0 0.010 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.124 Exceeding memory limit.
+-108 0 0.071 Exceeding memory limit.
+-108 0 0.098 Exceeding memory limit.
+-108 0 0.982 Exceeding memory limit.
+-103 0 2.478 Time out.
+-108 0 1.973 Exceeding memory limit.
+}102 10

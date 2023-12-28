@@ -1,0 +1,54 @@
+{rgb 100 Compile successfully
+101 0 0.001 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+}102 0
+{prime 100 Compile successfully
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 0 0.005 Player's string differs with the answer!
+101 0 0.109 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 0 0.001 edges mustn't form a cycle
+101 0 0.001 edges mustn't form a cycle
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+101 0 0.006 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.003 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+}102 0
+{prime 100 Compile successfully
+101 0 0.009 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.005 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.126 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

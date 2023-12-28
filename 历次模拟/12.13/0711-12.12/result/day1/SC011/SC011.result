@@ -1,0 +1,30 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.013 construction is correct
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.017 construction is correct
+101 10 0.012 construction is correct
+101 10 0.017 construction is correct
+}102 100
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

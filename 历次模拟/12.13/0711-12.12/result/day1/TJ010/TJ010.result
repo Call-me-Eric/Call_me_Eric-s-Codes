@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.001 construction is correct
+101 0 0.001 r, g, b conditions not met, used_r = 9, used_g = 8, used_b = 9
+101 0 0.001 r, g, b conditions not met, used_r = 26, used_g = 45, used_b = 8
+101 0 0.002 r, g, b conditions not met, used_r = 45, used_g = 2, used_b = 25
+101 0 0.000 r, g, b conditions not met, used_r = 81, used_g = 83, used_b = 79
+101 0 0.000 r, g, b conditions not met, used_r = 108, used_g = 111, used_b = 0
+101 0 0.001 r, g, b conditions not met, used_r = 69, used_g = 38, used_b = 0
+101 0 0.002 r, g, b conditions not met, used_r = 77, used_g = 81, used_b = 65
+101 0 0.000 r, g, b conditions not met, used_r = 65, used_g = 61, used_b = 81
+101 0 0.002 r, g, b conditions not met, used_r = 83, used_g = 82, used_b = 81
+}102 10
+{prime 100 Compile successfully
+101 10 0.000 Right Output!!!
+101 10 0.011 Right Output!!!
+101 10 0.012 Right Output!!!
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.006 Player's string differs with the answer!
+}102 30
+{young 100 Compile successfully
+101 0 0.001 Player's string differs with the answer!
+-103 0 2.021 Time out.
+-103 0 2.053 Time out.
+101 0 0.192 Player's string differs with the answer!
+101 0 0.189 Player's string differs with the answer!
+-103 0 2.093 Time out.
+101 0 0.144 Player's string differs with the answer!
+101 0 0.189 Player's string differs with the answer!
+101 0 0.002 Player's string differs with the answer!
+-103 0 2.102 Time out.
+}102 0

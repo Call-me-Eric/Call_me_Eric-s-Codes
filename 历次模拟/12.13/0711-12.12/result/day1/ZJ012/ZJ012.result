@@ -1,0 +1,45 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+}102 0
+{prime 100 Compile successfully
+101 10 0.000 Right Output!!!
+101 10 1.071 Right Output!!!
+101 10 1.168 Right Output!!!
+101 0 0.778 Player's string differs with the answer!
+101 0 0.898 Player's string differs with the answer!
+101 0 0.463 Player's string differs with the answer!
+101 0 0.829 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+}102 30
+{young 100 Compile successfully
+101 10 0.000 Right Output!!!
+101 10 0.254 Right Output!!!
+-103 0 2.469 Time out.
+-103 0 2.047 Time out.
+-103 0 2.070 Time out.
+-103 0 2.077 Time out.
+-103 0 2.084 Time out.
+-103 0 2.076 Time out.
+-103 0 2.055 Time out.
+-103 0 2.074 Time out.
+}102 20

@@ -1,0 +1,58 @@
+{rgb 100 Compile successfully
+101 0 0.002 No Score.
+101 0 0.000 No Score.
+101 0 0.000 No Score.
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 10 0.001 construction is correct
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+}102 100
+{prime 100 Compile successfully
+101 10 0.003 Right Output!!!
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+}102 10
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.001 construction is correct
+101 10 0.001 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+}102 100
+{prime 100 Compile successfully
+101 10 0.003 Right Output!!!
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+}102 10
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

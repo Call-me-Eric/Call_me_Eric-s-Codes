@@ -1,0 +1,159 @@
+#include <bits/stdc++.h>
+#define rep(i, x, y) for (int i = (x); i <= (y); i+=1)
+#define per(i, x, y) for (int i = (x); i >= (y); i-=1)
+#define epr(i, x) for (int i = head[x]; i; i = nxt[i])
+#define fi first
+#define se second
+#define ep emplace
+#define eb emplace_back
+
+using namespace std;
+
+typedef long long LL;
+typedef pair <int, int> PII;
+
+template <typename T>
+inline T gi()
+{
+	T x = 0, f = 0; char c = getchar();
+	while (c < '0' || c > '9') f |= (c == '-'), c = getchar();
+	while (c >= '0' && c <= '9') x = x * 10 + c - '0', c = getchar();
+	return f ? -x : x;
+}
+
+const int N = 100003, mod = 998244353;
+
+string s;
+int lim, l[N];
+int su[N], pw[N], pw3[N], pw2[N], su2[N];
+int val[10], val1[10];
+int ans;
+
+int dfs1(int u, int tar)
+{
+	if (u > tar) return 1;
+	if (l[u] == 4 || l[u] == 6 || l[u] == 8 || l[u] == 0) return (1ll * val[l[u]] * pw[tar - u] % mod + dfs1(u + 1, tar)) % mod;
+	return 1ll * val[l[u]] * pw[tar - u] % mod;
+}
+
+int dfs2(int u, int tar)
+{
+	if (u > tar) return 1;
+	if (l[u] == 9 || l[u] == 6 || l[u] == 0) return (1ll * val1[l[u]] * pw3[tar - u] % mod + dfs2(u + 1, tar)) % mod;
+	return 1ll * val1[l[u]] * pw3[tar - u] % mod;
+}
+
+int dfs3(int u, int tar)
+{
+	if (u > tar) return 1;
+	if (l[u] == 6 || l[u] == 0) return (1ll * ((l[u] > 0) + (l[u] > 6)) * pw2[tar - u] % mod + dfs3(u + 1, tar)) % mod;
+	return 1ll * ((l[u] > 0) + (l[u] > 6)) * pw2[tar - u] % mod;
+}
+
+inline void solve1(string o)
+{
+	int len = o.size();
+	if (len < 2) return;
+	rep(i, 2, len - 1) (ans += su[i - 2]) %= mod;
+	if (l[0] < 4) return;
+	bool fl = 0;
+	rep(i, 1, len - 1)
+	{
+		if (fl || l[i] == 9) (ans += pw[len - 1 - i]) %= mod;
+		if (!fl && l[i] < 6) return;
+		fl |= (l[i] > 6);
+	}
+}
+
+inline void solve2(string o)
+{
+	int len = o.size();
+	rep(i, 1, len - 1) (ans += (su[i - 1] + mod - i) % mod) %= mod;
+	bool fl = 0;
+	rep(i, 0, len - 1)
+	{
+		if (fl || l[i] == 9) (ans += (pw[len - 1 - i] + mod - 1) % mod) %= mod;
+		if (!fl && l[i] < 6) return;
+		fl |= (l[i] > 6);
+	}
+}
+
+inline void solve3(string o)
+{
+	int len = o.size();
+	if (len < 2) return;
+	rep(i, 2, len - 1) (ans += su[i - 2]) %= mod;
+	if (l[0] < 8) return;
+	bool fl = 0;
+	rep(i, 1, len - 1)
+	{
+		if (fl || l[i] >= 1) (ans += pw[len - 1 - i]) %= mod;
+		fl |= (l[i] > 0);
+	}
+}
+
+inline void solve(string o, string x)
+{
+	int sx = x.size(), so = o.size();
+	if (so < sx) return;
+	rep(i, sx, so - 1) (ans += pw[i - sx]) %= mod;
+	bool fl = 0;
+	rep(i, 0, sx - 1) if (o[i] < x[i]) return; else if (o[i] > x[i]) {fl = 1; break;}
+	if (fl) {(ans += pw[so - sx]) %= mod; return;}
+	(ans += dfs1(sx, so - 1)) %= mod;
+}
+
+inline int solve(string o)
+{
+	if (o == "0") return 1;
+	lim = o.size();
+	rep(i, 0, lim - 1) l[i] = o[i] - '0';
+	int res1 = dfs1(0, lim - 1), res2 = dfs2(0, lim - 1), res3 = dfs3(0, lim - 1);
+//	cout << o << ":::\n";
+//	cout << res1 << ' ' << res2 << ' ' << res3 << endl;
+	ans = (1ll * res1 + res2 + mod - res3) % mod;
+//	cout << ans << endl;
+	solve1(o); //466...69
+//	cout << "466...69 " << ans << endl;
+	solve2(o); //666...69
+//	cout << "666...69 " << ans << endl;
+	solve3(o); //800...01
+//	cout << "800...01 " << ans << endl;
+	solve(o, "6609"); 
+//	cout << "6609 " << ans << endl;
+	solve(o, "6649"); 
+//	cout << "6649 " << ans << endl;
+	solve(o, "9469"); 
+//	cout << "9469 " << ans << endl;
+	solve(o, "94669"); 
+//	cout << "94669 " << ans << endl;
+	solve(o, "901"); 
+//	cout << "901 " << ans << endl;
+	solve(o, "91"); 
+//	cout << "91 " << ans << endl;
+	solve(o, "1");
+//	cout << "1 " << ans << '!' << endl;
+	return ans;
+}
+
+inline void solve()
+{
+	cin >> s;
+	int len = s.size();
+	per(i, len - 1, 0) if (s[i] == '0') s[i] = '9'; else {--s[i]; break;}
+	int res = solve(s);
+	cin >> s; len = s.size();
+	printf("%d\n", (solve(s) + mod - res) % mod);
+	return;
+}
+
+int main()
+{
+	freopen("prime.in", "r", stdin); freopen("prime.out", "w", stdout);
+	rep(i, pw[0] = pw3[0] = pw2[0] = 1, 100000) pw[i] = 4ll * pw[i - 1] % mod, pw3[i] = 3ll * pw3[i - 1] % mod, pw2[i] = 2ll * pw2[i - 1] % mod;
+	rep(i, su[0] = su2[0] = 1, 100000) su[i] = (su[i - 1] + pw[i]) % mod, su2[i] = (su2[i - 1] + pw2[i]) % mod;
+	val[0] = 0, val[1] = val[2] = val[3] = val[4] = 1, val[5] = val[6] = 2, val[7] = val[8] = 3, val[9] = 4;
+	val1[0] = 0, val1[1] = val1[2] = val1[3] = val1[4] = val1[5] = 1, val1[6] = val1[7] = val1[8] = 2, val1[9] = 3;
+	int T = gi <int> (); while (T--) solve();
+	return !!0;
+}

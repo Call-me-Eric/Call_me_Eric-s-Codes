@@ -1,0 +1,45 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.008 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+}102 10
+{prime 100 Compile successfully
+101 0 0.002 Player's string differs with the answer!
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+}102 0
+{young 100 Compile successfully
+101 10 1.060 Right Output!!!
+-103 0 2.097 Time out.
+-103 0 2.091 Time out.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-103 0 2.097 Time out.
+-108 0 0.000 Exceeding memory limit.
+}102 10

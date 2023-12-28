@@ -1,0 +1,121 @@
+#include<bits/stdc++.h>
+#define LL long long
+#define SZ(x) ((LL)(x.size()))
+using namespace std;
+long long read(){
+  long long q=0,w=1;
+  char ch=getchar();
+  while(ch>'9' || ch<'0'){if(ch=='-')w=-1;ch=getchar();}
+  while(ch>='0'&&ch<='9'){q=q*10+(ch-'0');ch=getchar();}
+  return q*w;
+}
+void write(LL x){
+  if(x<0){putchar('-');x=(-x);}
+  if(x>9)write(x/10);
+  putchar('0'+x%10);
+}
+void writeln(LL x){write(x);puts("");}
+void writecs(LL x){write(x);putchar(' ');}
+LL gcd(LL x,LL y){
+  if(!x||!y)return (x|y);
+  return gcd(y%x,x);
+}
+vector<LL>factor(LL x){
+  vector<LL>res;
+  for(LL i=2;i*i<=x;i++)
+    if(!(x%i)){
+      while(!(x%i))x/=i;
+      res.push_back(i);
+    }
+  if(x>1)res.push_back(x);
+  return res;
+}
+#define PLL pair<LL,LL>
+#define mp(a,b) make_pair(a,b)
+#define fir first
+#define sec second
+const long long N = 1000000+95;
+long long n,K;vector<LL>P;LL vl;struct item{LL p1,x,p2,y;}pr;bool ans[N],ok[N];
+
+#define db long double
+const db eps = (1e-3) , PI = acos(-1);
+inline bool eq(db x,db y){return (fabs(x-y)<eps);}
+struct pt{db x,y;}a[N];
+inline pt operator+(pt x,pt y){return (pt){x.x+y.x,x.y+y.y};}
+inline pt operator-(pt x,pt y){return (pt){x.x-y.x,x.y-y.y};}
+int main(){
+  //  freopen("ur.in","r",stdin);
+  //  freopen("ur.out","w",stdout);
+  n=read();K=read();P=factor(n);
+  vl=0;pr=(item){0,0,0,0};
+  for(auto p:P){
+    for(LL x=0;x*p<=n;x++)
+      if(x*p<=K&&x*p>vl){pr=(item){p,x,0,0};vl=x*p;}
+  }
+  for(auto p1:P)
+    for(auto p2:P){
+      if(p1==p2)continue;
+      LL d1=(n/p1),d2=(n/p2),pos=d2;
+      for(LL x=0;x<=d1;x++){
+	while((!((x<=d1-p2*((pos+p1-1)/p1))&&(pos<=d2-p1*((x+p2-1)/p2))&&(x*p1+pos*p2)<=K))&&pos>=0)pos--;
+	if(pos<0)break;
+	LL y=pos;
+	LL v=x*p1+y*p2;
+	assert(x>=0&&y>=0&&v<=K);
+	if(v>vl){pr=(item){p1,x,p2,y};vl=v;}
+      }
+    }
+  //  cerr<<" vl = "<<vl<<endl;
+  //  cout<<" vl = "<<vl<<" pr.p1 = "<<pr.p1<<" pr.x = "<<pr.x<<" pr.p2 = "<<pr.p2<<" pr.y = "<<pr.y<<endl;
+  if(!pr.p1){
+    for(LL i=0;i<n;i++)putchar('0');
+    for(LL i=0;i<n;i++)ans[i]=0;
+    puts("");
+  }
+  else if(!pr.p2){
+    //    cout<<" pr.p1 = "<<pr.p1<<" pr.x = "<<pr.x<<endl;
+    for(LL x=0;x<pr.x;x++){
+      LL now=x;
+      while(now<n){ans[now]=true;now+=(n/pr.p1);}
+    }
+    for(LL i=0;i<n;i++){
+      if(ans[i])putchar('1');
+      else putchar('0');
+    }
+  }
+  else {
+    LL p1=pr.p1,x=pr.x,p2=pr.p2,y=pr.y;
+    LL d1=(n/p1),d2=(n/p2);
+    LL g=gcd(d1,d2);
+    for(LL t=0;t<g;t++){
+      LL s=t;
+      while(s<d1&&x>0){
+	x--;
+	LL now=s;
+	while(now<n){ans[now]=true;now+=(n/p1);}
+	s+=g;
+      }
+    }
+    for(LL i=0;i<n;i++)
+      if(ans[i])ok[i%d2]=true;
+    for(LL i=0;i<d2&&y>0;i++){
+      if(ok[i])continue;
+      LL now=i;y--;
+      while(now<n){ans[now]=true;now+=(n/p2);}
+    }
+    for(LL i=0;i<n;i++){
+      if(ans[i])putchar('1');
+      else putchar('0');
+    }
+    puts("");
+  }
+  for(LL i=0;i<n;i++){
+    db x=sin(2.0*PI*i/n),y=cos(2.0*PI*i/n);
+    a[i]=(pt){x,y};
+  }
+  pt SUM=(pt){0.0,0.0};
+  for(LL i=0;i<n;i++)
+    if(ans[i])SUM=(SUM+a[i]);
+  assert(eq(SUM.x,0.0)&&eq(SUM.y,0.0));
+  return 0;
+}

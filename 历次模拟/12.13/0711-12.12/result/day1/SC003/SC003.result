@@ -1,0 +1,30 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime 100 Compile successfully
+101 0 0.005 Player's string differs with the answer!
+101 10 0.000 Right Output!!!
+101 0 0.003 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 10 0.004 Right Output!!!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 10 0.000 Right Output!!!
+101 0 0.006 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+}102 30
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

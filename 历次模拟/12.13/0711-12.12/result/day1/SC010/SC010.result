@@ -1,0 +1,48 @@
+{rgb 100 Compile successfully
+101 0 0.028 No Score.
+101 0 0.062 used.size() should be m
+101 0 0.025 judge has a solution but player does not have
+101 0 0.037 judge has a solution but player does not have
+101 0 0.085 used.size() should be m
+101 0 0.060 judge has a solution but player does not have
+101 0 0.061 judge has a solution but player does not have
+101 0 0.056 used.size() should be m
+101 0 0.065 judge has a solution but player does not have
+101 0 0.066 judge has a solution but player does not have
+}102 0
+{rgb 100 Compile successfully
+101 10 0.039 construction is correct
+101 0 0.053 used.size() should be m
+101 0 0.064 judge has a solution but player does not have
+101 0 0.044 judge has a solution but player does not have
+101 0 0.052 used.size() should be m
+101 0 0.058 judge has a solution but player does not have
+101 0 0.043 judge has a solution but player does not have
+101 0 0.062 used.size() should be m
+101 0 0.077 judge has a solution but player does not have
+101 0 0.073 judge has a solution but player does not have
+}102 10
+{prime 100 Compile successfully
+101 10 1.083 Right Output!!!
+101 10 1.069 Right Output!!!
+101 10 1.130 Right Output!!!
+101 0 1.077 Player's string differs with the answer!
+101 0 1.105 Player's string differs with the answer!
+101 0 1.065 Player's string differs with the answer!
+101 0 1.146 Player's string differs with the answer!
+101 0 0.964 Player's string differs with the answer!
+101 0 1.051 Player's string differs with the answer!
+101 0 1.103 Player's string differs with the answer!
+}102 30
+{young 100 Compile successfully
+101 10 0.518 Right Output!!!
+-103 0 2.244 Time out.
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-103 0 2.473 Time out.
+-108 0 0.000 Exceeding memory limit.
+}102 10

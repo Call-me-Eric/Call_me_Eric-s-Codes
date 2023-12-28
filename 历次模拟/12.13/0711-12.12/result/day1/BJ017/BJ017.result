@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+101 10 0.011 construction is correct
+101 10 0.006 construction is correct
+101 10 0.375 construction is correct
+101 10 0.013 construction is correct
+101 10 0.000 construction is correct
+101 10 0.063 construction is correct
+101 10 0.022 construction is correct
+101 10 0.025 construction is correct
+}102 100
+{prime 100 Compile successfully
+101 10 0.512 Right Output!!!
+101 10 0.568 Right Output!!!
+101 10 0.640 Right Output!!!
+101 10 0.680 Right Output!!!
+101 10 0.744 Right Output!!!
+101 10 1.886 Right Output!!!
+101 10 1.867 Right Output!!!
+-103 0 2.029 Time out.
+-103 0 2.031 Time out.
+-103 0 2.039 Time out.
+}102 70
+{young 100 Compile successfully
+101 10 0.000 Right Output!!!
+101 10 0.263 Right Output!!!
+-103 0 2.436 Time out.
+-103 0 2.400 Time out.
+-103 0 2.028 Time out.
+-103 0 2.362 Time out.
+-103 0 2.469 Time out.
+-103 0 2.234 Time out.
+101 0 0.002 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+}102 20

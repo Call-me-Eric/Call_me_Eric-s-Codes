@@ -1,0 +1,69 @@
+#include<iostream>
+#include<cstdio>
+#include<vector>
+#include<algorithm>
+#define N 200000
+using namespace std;
+int read()
+{
+	char c=0;
+	int sum=0;
+	while (c<'0'||c>'9') c=getchar();
+	while ('0'<=c&&c<='9') sum=sum*10+c-'0',c=getchar();
+	return sum;
+}
+int n,m,length,tong[N+1],res;
+long long ans,ans2;
+bool used[N+1];
+vector<int>E[N+1];
+void add(int x,int y)
+{
+	E[x].push_back(y),E[y].push_back(x);
+	return;
+}
+void dfs(int x)
+{
+	used[x]=1,tong[++length]=E[x].size();
+	for (int i=0;i<E[x].size();++i)
+		if (!used[E[x][i]])
+			dfs(E[x][i]);
+	return;
+}
+int main()
+{
+	freopen("li.in","r",stdin);
+	freopen("li.out","w",stdout);
+	int x,y;
+	bool op;
+	n=read(),m=read();
+	for (int i=1;i<=m;++i) x=read(),y=read(),add(x,y);
+	for (int i=1;i<=n;++i)
+		if (!used[i])
+		{
+			length=0,dfs(i),sort(tong+1,tong+length+1);
+			op=(length==1||(tong[1]==1&&tong[2]==1));
+			for (int j=3;j<=length;++j) op&=(tong[j]==2);
+			if (op)
+			{
+				ans+=((1ll*length*(length+1))>>1);
+				continue;
+			}
+			op=1;
+			for (int j=1;j<=length;++j) op&=(tong[j]==2);
+			if (op)
+			{
+				res=1,ans2+=length;
+				continue;
+			}
+			if (length==4&&tong[1]==1&&tong[2]==1&&tong[3]==1&&tong[4]==3)
+			{
+				res=1,ans2+=3;
+				continue;
+			}
+			puts("-1");
+			return 0;
+		}
+	if (!res) printf("0 %lld\n",ans);
+	else printf("1 %lld\n",ans2);
+	return 0;
+}

@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.001 construction is correct
+101 10 0.001 construction is correct
+101 0 0.002 r, g, b conditions not met, used_r = 20, used_g = 38, used_b = 29
+101 10 0.000 construction is correct
+101 0 0.002 judge has a solution but player does not have
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 0 0.000 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+}102 60
+{prime 100 Compile successfully
+101 10 0.000 Right Output!!!
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.003 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+}102 10
+{young 100 Compile successfully
+101 10 0.003 Right Output!!!
+101 10 0.005 Right Output!!!
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+101 0 0.001 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+}102 20

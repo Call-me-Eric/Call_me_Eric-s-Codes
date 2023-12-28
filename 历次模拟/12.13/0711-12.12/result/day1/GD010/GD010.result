@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+}102 20
+{prime 100 Compile successfully
+101 0 0.099 Player's string differs with the answer!
+101 0 0.099 Player's string differs with the answer!
+101 0 0.104 Player's string differs with the answer!
+101 0 0.108 Player's string differs with the answer!
+101 0 0.116 Player's string differs with the answer!
+101 0 0.105 Player's string differs with the answer!
+101 0 0.108 Player's string differs with the answer!
+101 0 0.097 Player's string differs with the answer!
+101 0 0.103 Player's string differs with the answer!
+101 0 0.100 Player's string differs with the answer!
+}102 0
+{young 100 Compile successfully
+101 0 0.002 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.000 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+}102 0

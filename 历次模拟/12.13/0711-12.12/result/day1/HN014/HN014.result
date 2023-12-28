@@ -1,0 +1,27 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+-103 0 2.073 Time out.
+-103 0 2.381 Time out.
+101 0 0.000 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.002 used.size() should be m
+-103 0 2.099 Time out.
+101 0 0.715 result must be "YES" or "NO"
+}102 20
+{prime 100 Compile successfully
+101 10 0.000 Right Output!!!
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.004 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+101 0 0.004 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+}102 10
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

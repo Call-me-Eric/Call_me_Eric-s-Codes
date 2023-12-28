@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 0 0.000 r, g, b conditions not met, used_r = 0, used_g = 0, used_b = 2
+101 0 0.000 r, g, b conditions not met, used_r = 0, used_g = 8, used_b = 0
+101 10 0.000 construction is correct
+101 10 0.001 construction is correct
+101 0 0.001 r, g, b conditions not met, used_r = 0, used_g = 1, used_b = 0
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+}102 70
+{prime 100 Compile successfully
+101 10 0.005 Right Output!!!
+101 10 0.000 Right Output!!!
+101 10 0.000 Right Output!!!
+101 10 0.000 Right Output!!!
+101 10 0.000 Right Output!!!
+101 10 0.000 Right Output!!!
+101 10 0.004 Right Output!!!
+101 10 0.013 Right Output!!!
+-103 0 2.079 Time out.
+-103 0 2.050 Time out.
+}102 80
+{young 100 Compile successfully
+101 10 0.004 Right Output!!!
+101 10 0.443 Right Output!!!
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.001 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.002 Exceeding memory limit.
+-103 0 2.468 Time out.
+-108 0 0.001 Exceeding memory limit.
+}102 20

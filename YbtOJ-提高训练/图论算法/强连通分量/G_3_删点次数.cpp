@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+inline int read(){
+    int x = 0, f = 1;char ch = getchar();
+    while(ch < '0' || ch > '9'){if(ch == '-')f = -1;ch = getchar();}
+    while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + ch - '0';ch = getchar();}
+    return x * f;
+}
+int n, m;
+const int maxn = 1e6 + 10, maxm = 1e6 + 10;
+int g[maxn];
+int head[maxn], tot;
+struct edge{
+    int topoint, nextedge;
+}e[maxn];
+void add(int u,int v){
+    e[++tot].topoint = v;
+    e[tot].nextedge = head[u];
+    head[u] = tot;
+}
+stack<int> stk;
+vector<int> vec[maxn];
+int col[maxn], color, size[maxn];
+int dfn[maxn],low[maxn], _index;
+void dfs(int u){
+    dfn[u] = low[u] = ++_index;
+    stk.push(u);
+    for(int i = head[u];i;i = e[i].nextedge){
+        int v = e[i].topoint;
+        if(!dfn[v]){
+            dfs(v);
+            low[u] = min(low[u],low[v]);
+        }
+        else if(!col[v]){
+            low[u] = min(low[u],dfn[v]);
+        }
+    }
+    if(dfn[u] == low[u]){
+        col[u] = ++color;
+        size[color] = 1;
+        vec[color].push_back(u);
+        while(stk.top() ^ u){
+            col[stk.top()] = color;size[color]++;
+            vec[color].push_back(stk.top());stk.pop();
+        }
+        stk.pop();
+    }
+}
+signed main(){
+    n = read(); m = read();
+    int u, v;
+    for(int i = 1;i <= m;i++){
+        u = read(); v = read();
+        add(u,v);
+    }
+    int ans = -1;
+    for(int i = 1;i <= n;i++){if(!dfn[i])dfs(i);}
+    for(int x = 1;x <= color;x++){
+        for(int j = 0;j < vec[x].size();j++){
+            int u = vec[x][j];
+            for(int i = head[u];i;i = e[i].nextedge){
+                int v = e[i].topoint;
+                if(col[v] ^ x)g[x] = max(g[x],g[col[v]]);
+            }
+        }
+        g[x] += size[x];
+        ans = max(ans,g[x]);
+    }
+    printf("%d\n",ans);
+    return 0;
+}

@@ -1,0 +1,27 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.005 judge has a solution but player does not have
+101 10 0.019 construction is correct
+101 0 0.000 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.008 edges mustn't form a cycle
+101 0 0.000 judge has a solution but player does not have
+101 0 0.004 edges mustn't form a cycle
+}102 20
+{prime 100 Compile successfully
+101 10 0.000 Right Output!!!
+101 10 0.000 Right Output!!!
+101 10 0.000 Right Output!!!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.004 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+}102 30
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

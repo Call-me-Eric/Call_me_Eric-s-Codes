@@ -1,0 +1,63 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime 100 Compile successfully
+101 0 0.002 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.002 Player's string differs with the answer!
+101 0 0.002 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.005 Player's string differs with the answer!
+101 0 0.075 Player's string differs with the answer!
+}102 0
+{young 100 Compile successfully
+-103 0 2.101 Time out.
+-103 0 2.047 Time out.
+-103 0 2.193 Time out.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.005 Exceeding memory limit.
+-103 0 2.094 Time out.
+-108 0 0.000 Exceeding memory limit.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime 100 Compile successfully
+101 0 0.002 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.000 Player's string differs with the answer!
+101 0 0.002 Player's string differs with the answer!
+101 0 0.005 Player's string differs with the answer!
+101 0 0.058 Player's string differs with the answer!
+}102 0
+{young 100 Compile successfully
+-103 0 2.097 Time out.
+-103 0 2.087 Time out.
+-103 0 2.095 Time out.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-103 0 2.051 Time out.
+-108 0 0.000 Exceeding memory limit.
+}102 0

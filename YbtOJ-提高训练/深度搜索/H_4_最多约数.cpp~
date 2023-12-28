@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+#define int unsigned long long
+using namespace std;
+inline int read(){
+    int x = 0;char ch = getchar();
+    while(ch < '0' || ch > '9'){ch = getchar();}
+    while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + ch - '0';ch = getchar();}
+    return x;
+}
+int n, ans, tmp;
+const int prime[20] = {2,3,5,7,11,13,17,19,23,29,31,37,41};
+void dfs(int step,int pow,int most,int took,int m){
+    int res = m * (took + 1);
+    if(res > tmp || (res == tmp && pow < ans)){tmp = res;ans = pow;}
+    if(took + 1 <= most && pow * prime[step] <= n){dfs(step,pow * prime[step],most,took + 1,m);}
+    if(pow * prime[step + 1] <= n){
+        dfs(step + 1,pow * prime[step + 1],most,1,m * (took + 1));
+    }
+}
+signed main(){
+    cin >> n;
+    dfs(0,1,53,0,1);
+    cout << ans;
+    return 0;
+}

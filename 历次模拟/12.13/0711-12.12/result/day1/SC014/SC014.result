@@ -1,0 +1,48 @@
+{rgb 100 Compile successfully
+101 10 0.001 construction is correct
+101 10 0.001 construction is correct
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.006 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.003 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+}102 20
+{rgb 100 Compile successfully
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.008 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.002 edges mustn't form a cycle
+101 0 0.000 edges mustn't form a cycle
+101 0 0.001 edges mustn't form a cycle
+}102 20
+{prime 100 Compile successfully
+101 0 0.130 Player's string differs with the answer!
+101 0 0.106 Player's string differs with the answer!
+101 0 0.116 Player's string differs with the answer!
+101 0 0.088 Player's string differs with the answer!
+101 0 0.125 Player's string differs with the answer!
+101 0 0.140 Player's string differs with the answer!
+101 0 0.141 Player's string differs with the answer!
+101 0 0.121 Player's string differs with the answer!
+101 0 0.398 Player's string differs with the answer!
+-108 0 0.006 Exceeding memory limit.
+}102 0
+{young 100 Compile successfully
+101 0 0.194 Player's string differs with the answer!
+-103 0 2.083 Time out.
+-103 0 2.475 Time out.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.006 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.000 Exceeding memory limit.
+-108 0 0.006 Exceeding memory limit.
+101 0 0.000 Player's string differs with the answer!
+-108 0 0.000 Exceeding memory limit.
+}102 0

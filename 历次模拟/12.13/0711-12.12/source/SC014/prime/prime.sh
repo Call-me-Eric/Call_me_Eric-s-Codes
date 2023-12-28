@@ -1,0 +1,1 @@
+g++ -o prime prime.cpp -std=c++14 -O2 -Wall -Wextra -Wshadow -fsanitize=address,undefined

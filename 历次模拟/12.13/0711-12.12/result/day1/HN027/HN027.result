@@ -1,0 +1,27 @@
+{rgb 100 Compile successfully
+101 0 0.000 used.size() should be m
+101 0 0.001 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.000 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+101 0 0.001 judge has a solution but player does not have
+}102 0
+{prime 100 Compile successfully
+101 10 0.013 Right Output!!!
+-108 0 0.026 Exceeding memory limit.
+-108 0 0.026 Exceeding memory limit.
+-108 0 0.014 Exceeding memory limit.
+-108 0 0.025 Exceeding memory limit.
+-108 0 0.017 Exceeding memory limit.
+-108 0 0.021 Exceeding memory limit.
+-108 0 0.025 Exceeding memory limit.
+-108 0 0.011 Exceeding memory limit.
+-108 0 0.015 Exceeding memory limit.
+}102 10
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

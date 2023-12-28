@@ -1,0 +1,36 @@
+{rgb 100 Compile successfully
+101 0 0.001 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.002 used.size() should be m
+101 0 0.002 used.size() should be m
+101 0 0.010 used.size() should be m
+101 0 0.003 used.size() should be m
+101 0 0.002 used.size() should be m
+101 0 0.006 used.size() should be m
+101 0 0.003 used.size() should be m
+101 0 0.000 used.size() should be m
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 0 0.000 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.003 used.size() should be m
+101 0 0.010 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.002 used.size() should be m
+101 0 0.000 used.size() should be m
+101 0 0.002 used.size() should be m
+101 0 0.002 used.size() should be m
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

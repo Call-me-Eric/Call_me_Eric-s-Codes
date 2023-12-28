@@ -1,0 +1,131 @@
+#include<bits/stdc++.h>
+using namespace std;
+inline int read(){
+    int x = 0, f = 1;char ch = getchar();
+    while(ch < '0' || ch > '9'){if(ch == '-')f = -1;ch = getchar();}
+    while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + ch - '0';ch = getchar();}
+    return x * f;
+}
+int n, m;
+const int maxn = 1e5 + 10;
+char ch[maxn];
+class Segment_tree{
+    private:
+    int d[maxn * 4][26], lazy[maxn * 4];
+    void pushup(int p){for(int i = 0;i < 26;i++)d[p][i] = d[p << 1][i] + d[(p << 1) | 1][i];}
+    void build(int l,int r,int p){
+        if(l == r){d[p][q[l]]++;return;}int mid = (l + r) >> 1;
+        build(l,mid,p << 1);build(mid + 1,r,(p << 1) | 1);pushup(p);
+    }
+    void pushdown(int p,int l,int r){
+        if(!lazy[p])return;
+        if(l != r){
+            int mid = (l + r) >> 1;
+            int s = mid - l + 1;
+            if(lazy[p] == 2){
+                for(int i = 0;i < 26;i++){
+                    int k = min(d[p][i],s);
+                    d[p << 1][i] = k;
+                    d[p][i] -= k;
+                    s -= k;
+                }
+            }
+            else{
+                for(int i = 25;i >= 0;i--){
+                    int k = min(d[p][i],s);
+                    d[p << 1][i] = k;
+                    d[p][i] -= k;
+                    s -= k;
+                }
+            }
+            for(int i = 0;i < 26;i++){
+                d[(p << 1) | 1][i] = d[p][i];
+                d[p][i] += d[p << 1][i];
+            }
+            lazy[p << 1] = lazy[(p << 1) | 1] = lazy[p];
+            lazy[p] = 0;
+        }
+    }
+    void getsum(int p,int l,int r,int s,int t){
+        if(l == s && t == r){
+            for(int i = 0;i < 26;i++){
+                d[0][i] += d[p][i];
+                d[p][i] = 0;
+            }
+            return;
+        }
+        pushdown(p,l,r);
+        int mid = (l + r) >> 1;
+        if(t <= mid)getsum(p << 1,l,mid,s,t);
+        else if(s > mid)getsum((p << 1) | 1,mid + 1,r,s,t);
+        else{
+            getsum(p << 1,l,mid,s,mid);
+            getsum((p << 1) | 1,mid + 1,r,mid + 1,t);
+        }
+    }
+    void update(int p,int l,int r,int s,int t,int tag){
+        if(l == s && t == r){
+            int s = l - r + 1;
+            if(tag == 2){
+                for(int i = 0;i < 26;i++){
+                    int k = min(d[0][i],s);
+                    d[p][i] = k;
+                    d[0][i] -= k;
+                    s -= k;
+                }
+            }
+            else{
+                for(int i = 25;i >= 0;i--){
+                    int k = min(d[0][i],s);
+                    d[p][i] = k;
+                    d[0][i] -= k;
+                    s -= k;
+                }
+            }
+            lazy[p] = tag;
+            return;
+        }
+        pushdown(p,l,r);
+        int mid = (l + r) >> 1;
+        if(t <= mid)update(p << 1,l,mid,s,t,tag);
+        else if(s > mid)update((p << 1) | 1,mid + 1,r,s,t,tag);
+        else{
+            update(p << 1,l,mid,s,mid,tag);
+            update((p << 1) | 1,mid + 1,r,mid + 1,t,tag);
+        }
+        pushup(p);
+    }
+    void findans(int p,int l,int r){
+        if(l == r){
+            for(int i = 0;i < 26;i++){
+                if(d[p][i]){
+                    putchar(i + 'a');
+                    break;
+                }
+            }
+            return;
+        }
+        pushdown(p,l,r);
+        int mid = (l + r) >> 1;
+        findans(p << 1,l,mid);
+        findans((p << 1) | 1,mid + 1,r);
+    }
+    public:
+    int q[maxn];
+    void build(int n){build(1,n,1);}
+    void update(int l,int r,int tag){getsum(1,1,n,l,r);update(1,1,n,l,r,tag + 1);}
+    void getans(){findans(1,1,n);}
+}tree;
+signed main(){
+    n = read(); m = read();
+    scanf("%s",ch + 1);
+    for(int i = 1;i <= n;i++){tree.q[i] = ch[i] - 'a';}
+    tree.build(n);
+    int tag,l,r;
+    for(int i = 1;i <= m;i++){
+        l = read(); r = read(); tag = read();
+        tree.update(l,r,tag);
+    }
+    tree.getans();
+    return 0;
+}

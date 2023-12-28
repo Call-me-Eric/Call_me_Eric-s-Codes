@@ -1,0 +1,27 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime 100 Compile successfully
+101 0 0.195 Player's string differs with the answer!
+101 0 0.163 Player's string differs with the answer!
+101 0 0.181 Player's string differs with the answer!
+101 0 0.185 Player's string differs with the answer!
+101 0 0.195 Player's string differs with the answer!
+101 0 0.182 Player's string differs with the answer!
+101 0 0.209 Player's string differs with the answer!
+101 0 0.199 Player's string differs with the answer!
+101 0 0.183 Player's string differs with the answer!
+101 0 0.185 Player's string differs with the answer!
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

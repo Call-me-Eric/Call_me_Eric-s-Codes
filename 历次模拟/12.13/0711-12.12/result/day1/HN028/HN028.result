@@ -1,0 +1,27 @@
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.026 construction is correct
+101 10 0.000 construction is correct
+101 10 0.002 construction is correct
+101 10 0.002 construction is correct
+101 10 0.000 construction is correct
+101 10 0.000 construction is correct
+101 10 0.001 construction is correct
+}102 100
+{prime 100 Compile successfully
+101 0 0.002 Can not open player's output file!
+101 0 0.002 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+101 0 0.000 Can not open player's output file!
+101 0 0.000 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+101 0 0.001 Can not open player's output file!
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

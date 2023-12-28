@@ -1,0 +1,39 @@
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{prime -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0
+{rgb 100 Compile successfully
+101 10 0.002 construction is correct
+101 0 0.001 result must be "YES" or "NO"
+101 0 0.000 result must be "YES" or "NO"
+101 0 0.001 result must be "YES" or "NO"
+101 0 0.000 result must be "YES" or "NO"
+-108 0 0.002 Exceeding memory limit.
+-108 0 0.001 Exceeding memory limit.
+101 0 0.000 result must be "YES" or "NO"
+101 0 0.000 result must be "YES" or "NO"
+101 0 0.001 result must be "YES" or "NO"
+}102 10
+{prime 100 Compile successfully
+101 10 0.276 Right Output!!!
+101 10 0.276 Right Output!!!
+101 10 0.139 Right Output!!!
+101 0 0.246 Player's string differs with the answer!
+101 0 0.275 Player's string differs with the answer!
+101 0 0.262 Player's string differs with the answer!
+101 0 0.294 Player's string differs with the answer!
+101 0 0.283 Player's string differs with the answer!
+101 0 0.287 Player's string differs with the answer!
+101 0 0.288 Player's string differs with the answer!
+}102 30
+{young -101 Compile failed.
+-101 0 ? Compile failed.
+}102 0

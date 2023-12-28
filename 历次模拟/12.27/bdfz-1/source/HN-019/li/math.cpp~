@@ -1,0 +1,31 @@
+#include<iostream>
+#include<cstdio>
+#include<vector>
+using namespace std;
+struct node
+{
+	int x,y;
+};
+vector<node>F(vector<node>p)
+{
+	vector<node>st;
+	for (int i=0;i<p.size();++i)
+		for (int j=i+1;j<p.size();++j)
+			if (p[i].x==p[j].x||p[i].x==p[j].y||p[i].y==p[j].x||p[i].y==p[j].y)
+				st.push_back((node){i+1,j+1});
+	return st;
+}
+int n,m;
+int main()
+{
+	int x,y,cnt=1;
+	vector<node>p;
+	cin>>n>>m;
+	for (int i=1;i<=m;++i) cin>>x>>y,p.push_back((node){x,y});
+	while (1)
+	{
+		cout<<1.0*p.size()/cnt/cnt/cnt<<endl;
+		p=F(p),cnt++;
+	}
+	return 0;
+}
