@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://oj.hailiangedu.com/d/d2022noipcsp/p/369?tid=65a49863206d4a040fd22157 -->
+<html data-page="contest_detail_problem" data-layout="basic" class="layout--basic page--contest_detail_problem theme--light hasjs nprogress-busy" lang="zh" data-app="Hydro"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://oj.hailiangedu.com/apple-touch-icon-180x180.png">
+  <link rel="icon" type="image/png" href="https://oj.hailiangedu.com/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="https://oj.hailiangedu.com/android-chrome-192x192.png" sizes="192x192">
+  <link rel="icon" type="image/png" href="https://oj.hailiangedu.com/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://oj.hailiangedu.com/favicon-16x16.png" sizes="16x16">
+  <link rel="canonical" href="https://oj.hailiangedu.com/p/369?tid=65a49863206d4a040fd22157">  <meta name="theme-color" content="#56758f">
+    <meta property="og:site_name" content="海亮教育信息学奥赛在线训练平台">
+  <meta property="og:title" content="题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台">
+  <meta property="og:url" content="https://oj.hailiangedu.com/p/369">
+  <meta property="og:image" content="/favicon-96x96.png">
+    <title>题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台</title>
+  <style>
+    body {
+      --font-family: "Open Sans", "Open Sans", "Seravek", "Segoe UI", "Verdana", "PingFang SC", "Hiragino Sans GB", "Lantinghei SC", "Microsoft Yahei", "WenQuanYi Micro Hei", "sans";
+      --code-font-family: "Source Code Pro", "monaco", "Source Code Pro", "Consolas", "Lucida Console", "monospace";
+      --font-ligatures: none !important;
+    }
+          #panel { display: flex; flex-direction: column; }
+      </style>
+      <link rel="stylesheet" media="all" href="./题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台_files/theme-4.48.25.css">
+        <script>
+      var _htmlNode = document.documentElement;
+      _htmlNode.className = _htmlNode.className.replace(' nojs', ' hasjs');
+      try {
+        import('data:text/javascript,');Object.fromEntries([]);window.matchMedia('all').addEventListener('change',()=>{});
+      } catch(e) {
+        const s = document.createElement('script');
+        s.async = false;
+        s.src = "/polyfill-4.48.25.js";
+        document.head.appendChild(s);
+      }
+    </script>
+  <style>.section {
+    transition: transform .5s, opacity .5s;
+    transition-timing-function: ease-out-cubic;
+  }</style></head>
+<body class=""><div class="page-loader nojs--hide" style="display: none;"><div class="loader"></div></div>
+      <script>
+      var UiContext = '{"cdn_prefix":"/","url_prefix":"/","ws_prefix":"/","nav_logo_dark":"/logo.png","constantVersion":"153205e2","domainId":"d2022noipcsp","domain":{"_id":"d2022noipcsp","lower":"d2022noipcsp","owner":2,"name":"2024-1\u6708\u6D77\u4EAE\u7EBF\u4E0B\u96C6\u8BAD","bulletin":"# \u6D77\u4EAE\u591A\u6821\u96C6\u8BAD \u8BAD\u7EC3\u7A7A\u95F4\\r\\n\\r\\n---\\r\\n\\r\\n#2024-1\u6708\u6D77\u4EAE\u7EBF\u4E0B\u96C6\u8BAD\\r\\n\\r\\n---\\r\\n\\r\\n**\u6CE8\u610F\uFF1A** \u9996\u6B21\u4F7F\u7528\uFF0C\u8BF7\u901A\u8FC7\u53F3\u4E0A\u89D2\u4E2A\u4EBA\u83DC\u5355->\u57DF\u8BBE\u7F6E\uFF0C\u786E\u8BA4\u4E2A\u4EBA\u663E\u793A\u540D\u4E3A \u201C\u59D3\u540D\uFF08\u5B66\u6821\uFF09\u201D \u683C\u5F0F\uFF0C\u4FBF\u4E8E\u663E\u793A\u548C\u7EDF\u8BA1\u6210\u7EE9\uFF01\\r\\n\\r\\n**\u6CE8\u610F\uFF1A** \u9996\u6B21\u4F7F\u7528\uFF0C\u8BF7\u901A\u8FC7\u53F3\u4E0A\u89D2\u4E2A\u4EBA\u83DC\u5355->\u6211\u7684\u8D44\u6599\uFF0C\u786E\u8BA4\u201C\u52A0\u5165\u4E86\u8FD9\u4E9B\u5C0F\u7EC4\u201D\u540E\u7684\u5C0F\u7EC4\u4FE1\u606F\u662F\u5426\u6B63\u786E\u3002\\r\\n\\r\\n**\uD83D\uDC40\uFE0F \u5173\u4E8EO2\uD83D\uDC40\uFE0F \uFF1A\u63D0\u4EA4\u8BED\u8A00\u9009\u5E26 \u201C\uFF08\u5F00\u542FO2\uFF09\u201D \u7684\u5373\u53EF\u9ED8\u8BA4\u5F00\u542FO2\u3002**\\r\\n\\r\\n**\uD83D\uDC40\uFE0F \u5173\u4E8E\u6587\u4EF6IO\uD83D\uDC40\uFE0F \uFF1A\u8BF7\u5173\u6CE8\u9898\u76EE\u8BE6\u60C5\u7F51\u9875\u9898\u76EE\u540D\u79F0\u4E0B\u65B9\u63D0\u793A\uFF08\u53C2\u8003\u9898\u5E93P1\u548CP1F\u7684\u533A\u522B\uFF09\u3002\u82E5\u9898\u76EE\u7C7B\u578B\u4E3A`\u6587\u4EF6IO(xxx)`\uFF0C\u5219\u9700\u8981\u4F7F\u7528\u6587\u4EF6IO\uFF0C\u4E14\u4EE5`xxx.in`\u4E3A\u8F93\u5165\u3001`xxx.out`\u4E3A\u8F93\u51FA\u3002\u82E5\u9898\u76EE\u7C7B\u578B\u4E3A`\u4F20\u7EDF\u9898`\u6216`\u8FDC\u7AEF\u8BC4\u6D4B\u9898`\uFF0C\u5219\u4E0D\u9700\u8981\u4F7F\u7528\u6587\u4EF6IO\u3002**\\r\\n\\r\\n","roles":{"\u5B66\u751F":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652887915011820990726785","\u8001\u5E08":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652888241541494262698625","guest":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","default":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652624386837205668069376","\u8001\u5E08_\u7279\u6743":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652909157393140588476407","\u8001\u5E08_\u653E\u9898":"10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652909157393140554658549"},"avatar":"gravatar:root@hydro.local","langs":"","share":""},"extraTitleContent":"\u6392\u5217\u7FFB\u8F6C\uFF08permutation\uFF09","SWConfig":{"preload":"","hosts":["http://oj.hailiangedu.com","https://oj.hailiangedu.com","https://oj.hailiangedu.com/","/"],"domains":[]}}';
+      var UserContext = '{"_id":212,"mail":"2823550525@qq.com","uname":"CallMeEric","hashType":"hydro","priv":327684,"regat":"2022-09-19T09:39:33.397Z","loginat":"2024-01-14T10:01:35.025Z","perm":"BigInt::10715086071862673209484250490600018105614048117055336074437503883703510511249361224931983788156958581275946729175531468251871452856923140435984577574698574803934567774824230985421074605062371141877954182153046474983581941267398767559165543946077062914571196477686542167660429831652887915011820990726785","scope":"BigInt::-1","role":"\u5B66\u751F","domains":[],"tfa":false,"authn":false,"group":["2024\u6D77\u4EAE\u7EBF\u4E0B\u96C6\u8BAD","212"],"viewLang":"zh","timeZone":"Asia/Shanghai","codeLang":"cc.std11","codeTemplate":"","avatar":"//q1.qlogo.cn/g?b=qq&nk=2823550525&s=160","qq":"","gender":"2","bio":"\u5899\u4E0A\u5199\u7740\u4E00\u884C\u8BDD\uFF1A\u83DC\u5C31\u591A\u7EC3\u7EC3\u3002","school":"","studentId":"","backgroundImage":"/components/profile/backgrounds/1.jpg","pinnedDomains":[],"fontFamily":"Open Sans","codeFontFamily":"Source Code Pro","preferredEditorType":"sv","monacoTheme":"vs-light","theme":"light","showInvisibleChar":false,"formatCode":true,"displayName":"\u8D75\u52C7\u54F2","nAccept":40,"nSubmit":42,"rp":163.2,"rpInfo":{"problem":162.2,"contest":1},"rank":17,"level":7,"avatarUrl":"//q1.qlogo.cn/g?b=qq&nk=2823550525&s=160"}';
+    </script>
+                  <script type="text/javascript" src="./题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台_files/lang-zh.js.下载"></script>
+      <script type="text/javascript" src="./题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台_files/hydro-4.48.25.js.下载"></script><div style="position: fixed; bottom: 0px; z-index: 9999;"><div></div></div>
+        <nav class="nav slideout-menu slideout-menu-right" id="menu">
+  <div class="row"><div class="columns clearfix">
+    <ol class="nav__list nav__list--main clearfix">
+      <li class="nav__list-item">
+        <a href="https://oj.hailiangedu.com/"><img class="nav__logo" src="./题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台_files/logo.png"></a>
+      </li>        <li class="nav__list-item">
+  <a href="https://oj.hailiangedu.com/d/d2022noipcsp/contest" class="nav__item">
+    返回比赛列表
+  </a>
+</li>
+              <li class="nav__list-item">
+  <a href="https://oj.hailiangedu.com/d/d2022noipcsp/contest/65a49863206d4a040fd22157" class="nav__item nav--active">
+    20240116模拟赛（Div. 1）
+  </a>
+</li>
+              
+              <li class="nav__list-item">
+  <a href="https://oj.hailiangedu.com/d/d2022noipcspError:%20No%20route%20found%20for%20name:%20undefined" class="nav__item nav--active">
+    A. 排列翻转（permutation）
+  </a>
+</li>
+      <li class="nav__list-item nav_more dropdown drop-target drop-element-attached-top drop-element-attached-right drop-target-attached-bottom drop-target-attached-right" data-dropdown-pos="bottom right" data-dropdown-target="#menu-nav-more">
+      <a href="javascript:;" class="nav__item">
+        更多 <span class="icon icon-expand_more"></span>
+      </a>
+    </li></ol>
+    <ol class="nav__list nav__list--secondary clearfix">
+    
+      <!-- <li class="nav__list-item"><a href="/d/d2022noipcsp/home/domain" class="nav__item"> 当前域：2024-1月海亮线下集训 </a></li> -->
+      <li class="nav__list-item dropdown nav__dropdown drop-target" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-curdomain" data-dropdown-disabledconstraintowindow="" data-dropdown-trigger-desktop-only="">
+        <!-- <a href="/d/d2022noipcsp/home/domain" class="nav__item">  -->
+        <a class="nav__item">
+          我在：
+          <span class="icon"><img src="https://cn.gravatar.com/avatar/b1c5a03f880177792abedb3685d7ed7f?d=mm&amp;s=12" width="12" height="12"></span>
+          2024-1月海亮线下集训 
+          <span class="icon icon-expand_more nojs--hide"></span>
+        </a>
+        <!-- </a> -->
+        
+      </li>
+
+      <li class="nav__list-item dropdown nav__dropdown drop-target" data-dropdown-pos="bottom right" data-dropdown-custom-class="nav__dropdown" data-dropdown-target="#menu-nav-user" data-dropdown-disabledconstraintowindow="" data-dropdown-trigger-desktop-only="">
+        <a href="https://oj.hailiangedu.com/d/d2022noipcsp/user/212" class="nav__item">CallMeEric <span class="icon icon-expand_more nojs--hide"></span></a>
+        
+      </li>
+        </ol>
+  </div></div>
+</nav>
+<nav class="nav--shadow"></nav>
+<div class="slideout-panel slideout-panel-right" id="panel">
+    <div class="slideout-overlay"></div>
+  <div class="header--mobile">
+  <div class="row"><div class="columns clearfix">
+    <div class="float-left">
+      <a class="header--mobile__domain" href="https://oj.hailiangedu.com/" target="_self">
+        <img src="./题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台_files/logo.png">
+      </a>
+    </div>
+    <div class="float-right">
+      <button type="button" class="header__hamburger">
+  <div class="hamburger hamburger--spin">
+    <span class="hamburger-box">
+      <span class="hamburger-inner"></span>
+    </span>
+  </div>
+</button>
+    </div>
+  </div></div>
+</div>
+  <div class="main">
+        <script>
+
+  
+  
+  
+  
+  
+  
+  
+</script>
+<div class="row" data-sticky-parent="">
+  <div class="medium-9 columns">
+    <div class="section visible">
+      <div class="section__header">
+        <h1 class="section__title">
+                              #A. 排列翻转（permutation）
+        </h1>
+                  <div class="section__tools contest-problems">
+                                                      <a href="https://oj.hailiangedu.com/d/d2022noipcsp/p/369?tid=65a49863206d4a040fd22157" class="                         active">
+                <span class="id">A</span>
+                              </a>                                          <a href="https://oj.hailiangedu.com/d/d2022noipcsp/p/370?tid=65a49863206d4a040fd22157" class="                        ">
+                <span class="id">B</span>
+                              </a>                                          <a href="https://oj.hailiangedu.com/d/d2022noipcsp/p/371?tid=65a49863206d4a040fd22157" class="                        ">
+                <span class="id">C</span>
+                              </a>          </div>
+              </div>
+      <div class="section__body">
+        <ul class="problem__tags">
+                    <span class="bp5-tag bp5-large bp5-minimal problem__tag-item icon icon-book">文件IO (permutation)</span>
+                      <span class="bp5-tag bp5-large bp5-minimal problem__tag-item icon icon-stopwatch">6000ms</span>
+            <span class="bp5-tag bp5-large bp5-minimal problem__tag-item icon icon-comparison">1024MiB</span>
+                                      </ul>
+      </div>
+    </div>
+    <div class="section visible">
+      <div class="problem-content-container"><div class="problem-content" data-marker-enabled="">
+        <div class="section__header non-scratchpad--hide">
+          <h1 class="section__title">排列翻转（permutation）</h1>
+        </div>
+                <div class="section__body typo" data-fragment-id="problem-description">
+          <p><a href="https://oj.hailiangedu.com/d/d2022noipcsp/p/369/file/permutation.zip?tid=65a49863206d4a040fd22157">本题样例文件保证来源于评测数据</a></p>
+<h2 id="%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0" tabindex="-1">题目描述</h2>
+<p>有一个大小为 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 的排列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 和一个正整数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>，可以对排列进行操作，每次操作可以选择一个区间 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">[</mo><mi>l</mi><mo separator="true">,</mo><mi>r</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[l,r]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mclose">]</span></span></span></span>，将对应区间进行翻转（<code>reverse(P+l,P+r+1);</code>），并产生 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>−</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">r-l</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6667em;vertical-align:-0.0833em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span></span></span></span> 的花费。</p>
+<p>称一组操作是可行的，当且仅当所有操作的区间均不交，且总花费不超过 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6944em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span></span></span></span>。</p>
+<p>求对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span> 进行一组可行操作可能得到的所有结果排列中，字典序第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 小的排列的第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 个数是多少。需要对 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> 次不同的询问给出答案。</p>
+<h2 id="%E8%BE%93%E5%85%A5%E6%A0%BC%E5%BC%8F" tabindex="-1">输入格式</h2>
+<p>第一行三个数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>k</mi><mo separator="true">,</mo><mi>q</mi></mrow><annotation encoding="application/x-tex">n,k,q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span>，分别表示排列大小，修改次数限制以及询问次数。</p>
+<p>接下来一行 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span> 个数，表示排列 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.13889em;">P</span></span></span></span>。</p>
+<p>接下来 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> 行，每行两个数 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x, y</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span></span></span></span> 表示询问。</p>
+<h2 id="%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F" tabindex="-1">输出格式</h2>
+<p><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span></span></span></span> 行，每行一个整数表示答案。特别地，如果不存在第 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">x</span></span></span></span> 个排列则输出 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">−</span><span class="mord">1</span></span></span></span>。</p>
+<div class="row"><div class="code-toolbar medium-6 columns sample"><h2>输入数据 1</h2><pre class="syntax-hl language-input1" tabindex="0"><code class="language-input1">5 4 8
+3 1 2 5 4
+2 3
+5 3
+10 5
+6 2
+5 2
+10 4
+6 5
+2 5
+</code></pre><div class="toolbar"><div class="toolbar-item"><a href="javascript:;">Copy</a></div></div></div><div class="code-toolbar medium-6 columns sample"><h2>输出数据 1</h2><pre class="syntax-hl language-output1" tabindex="0"><code class="language-output1">2
+3
+4
+1
+1
+2
+4
+4
+</code></pre><div class="toolbar"><div class="toolbar-item"><a href="javascript:;">Copy</a></div></div></div></div>
+
+<div class="row"><div class="code-toolbar medium-6 columns sample"><h2>输入数据 2</h2><pre class="syntax-hl language-input2" tabindex="0"><code class="language-input2">2 4 5
+2 1
+10 2
+8 2
+10 1
+2 2
+3 1
+</code></pre><div class="toolbar"><div class="toolbar-item"><a href="javascript:;">Copy</a></div></div></div><div class="code-toolbar medium-6 columns sample"><h2>输出数据 2</h2><pre class="syntax-hl language-output2" tabindex="0"><code class="language-output2">-1
+-1
+-1
+1
+-1
+</code></pre><div class="toolbar"><div class="toolbar-item"><a href="javascript:;">Copy</a></div></div></div></div>
+
+<h2 id="%E6%95%B0%E6%8D%AE%E8%8C%83%E5%9B%B4%E4%B8%8E%E6%8F%90%E7%A4%BA" tabindex="-1">数据范围与提示</h2>
+<p>对于所有数据保证 <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo separator="true">,</mo><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mn>4</mn><mo separator="true">,</mo><mn>1</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>18</mn></msup><mo separator="true">,</mo><mn>1</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">0\lt n,q\le 5\times 10^5,0\le k\le 4,1\le x\le 10^{18},1\le y\le n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6835em;vertical-align:-0.0391em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">&lt;</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">0</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7719em;vertical-align:-0.136em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:1.0085em;vertical-align:-0.1944em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">18</span></span></span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span></p>
+<table>
+<thead>
+<tr>
+<th>子任务编号</th>
+<th>数据范围</th>
+<th>分数</th>
+<th>依赖</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>100</mn><mo separator="true">,</mo><mi>k</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n,q\le 100,k=0</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8889em;vertical-align:-0.1944em;"></span><span class="mord">100</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">0</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span></td>
+<td>-</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">n,q\le 100</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">100</span></span></span></span></td>
+<td rowspan="2"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>1000</mn></mrow><annotation encoding="application/x-tex">n,q\le 1000</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1000</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k\le 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">1</span></span></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≤</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">k\le 2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">2</span></span></span></span></td>
+<td rowspan="2"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>10</mn></mrow><annotation encoding="application/x-tex">10</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">10</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4</mn></mrow><annotation encoding="application/x-tex">4</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">4</span></span></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn></mrow><annotation encoding="application/x-tex">6</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">6</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">k\le 3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.136em;"></span><span class="mord mathnormal" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>5</mn></mrow><annotation encoding="application/x-tex">5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">5</span></span></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>7</mn></mrow><annotation encoding="application/x-tex">7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">7</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n,q\le 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>30</mn></mrow><annotation encoding="application/x-tex">30</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">30</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">3</span></span></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>8</mn></mrow><annotation encoding="application/x-tex">8</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">8</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>q</mi><mo>≤</mo><mn>5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">n,q\le 5\times 10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8304em;vertical-align:-0.1944em;"></span><span class="mord mathnormal">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.7278em;vertical-align:-0.0833em;"></span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="base"><span class="strut" style="height:0.8141em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>20</mn></mrow><annotation encoding="application/x-tex">20</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6444em;"></span><span class="mord">20</span></span></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>6</mn><mo separator="true">,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">6,7</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">6</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.1667em;"></span><span class="mord">7</span></span></span></span></td>
+</tr>
+</tbody>
+</table>
+
+</div>      </div></div>
+    </div>
+  </div>
+  <div class="medium-3 columns"><div data-sticky="large">
+            <div class="section side section--problem-sidebar visible">
+  <div>
+    <ol class="menu">
+              <li class="menu__item scratchpad--hide nojs--hide"><a class="menu__link highlight" name="problem-sidebar__open-scratchpad" href="javascript:;" data-global-hotkey="alt+e">
+        <span class="icon icon-enlarge"></span> 进入在线编程模式 (Alt+E)
+      </a></li>
+      <li class="menu__item non-scratchpad--hide"><a class="menu__link" name="problem-sidebar__quit-scratchpad" href="javascript:;" data-global-hotkey="alt+q">
+        <span class="icon icon-enlarge"></span> 退出在线编程模式 (Alt+Q)
+      </a></li>
+          <li class="menu__item scratchpad--hide"><a class="menu__link" href="https://oj.hailiangedu.com/d/d2022noipcsp/p/C24012/submit?tid=65a49863206d4a040fd22157">
+        <span class="icon icon-send"></span> 递交
+      </a></li>
+            </ol>
+  </div>
+</div>
+    <div class="section side visible">
+  <a class="contest-sidebar__bg" href="https://oj.hailiangedu.com/d/d2022noipcsp/contest/65a49863206d4a040fd22157">
+    <div class="section__body">
+      <h1>20240116模拟赛（Div. 1）</h1>
+      <div class="contest-sidebar__status">
+              <span class="icon icon-check"></span> 已参加
+            </div>
+    </div>
+  </a>
+  <div>
+    <ol class="menu">
+              <li class="menu__item"><a class="menu__link" href="https://oj.hailiangedu.com/d/d2022noipcsp/contest/65a49863206d4a040fd22157">
+        <span class="icon icon-award"></span> 查看比赛
+      </a></li>
+        
+                      <li class="menu__item"><a class="menu__link" href="https://oj.hailiangedu.com/d/d2022noipcsp/discuss/contest/65a49863206d4a040fd22157">
+        <span class="icon icon-comment--text"></span> 讨论
+      </a></li>
+          <li class="menu__item"><a class="menu__link" href="https://oj.hailiangedu.com/d/d2022noipcsp/record?tid=65a49863206d4a040fd22157">
+        <span class="icon icon-flag"></span> 所有递交
+      </a></li>
+      <li class="menu__item"><a class="menu__link" href="https://oj.hailiangedu.com/d/d2022noipcsp/wiki/help#contest">
+        <span class="icon icon-help"></span> 帮助
+      </a></li>
+      <li class="menu__seperator"></li>
+    </ol>
+  </div>
+  <div class="section__body typo">
+    <dl class="large horizontal">
+      <dt>状态</dt>
+      <dd>
+        正在进行…
+                  (已参加)
+              </dd>
+      <dt>规则</dt><dd>OI</dd>
+      <dt>题目</dt><dd>3</dd>
+      <dt>开始于</dt><dd><span class="time" data-timestamp="1705363203.935">2024-1-16 8:00</span>
+</dd>
+      <dt>结束于</dt><dd><span class="time" data-timestamp="1705379400">2024-1-16 12:30</span>
+</dd>
+      <dt>持续时间</dt><dd>4.5
+ 小时</dd>
+      <dt>主持人</dt><dd><span class="user-profile-link">
+      <img class="small user-profile-avatar v-center" loading="lazy" src="./题目详情 - 排列翻转（permutation） - 海亮教育信息学奥赛在线训练平台_files/g" width="20" height="20">
+    <a class="user-profile-name" href="https://oj.hailiangedu.com/d/d2022noipcsp/user/3">
+          陈惇显（海亮高级中学） (DeaphetS)
+      </a>
+  </span>
+</dd>
+      <dt>参赛人数</dt><dd>17</dd>
+    </dl>
+  </div>
+</div>
+    </div></div>
+</div>
+<div style="display:none" class="outer-loader-container"><div class="loader"></div></div>
+<div class="scratchpad-container" style="display:none">
+  <div style="display:none" class="loader-container"><div class="loader"></div></div>
+  <div id="scratchpad" style="opacity:0"></div>
+</div>
+  <canvas id="c_n6" width="1592" height="751" style="position: fixed; top: 0px; left: 0px; z-index: -1; opacity: 0.5;"></canvas></div>
+  <div class="footer">
+  <div class="row"><div class="columns">
+    <div class="footer__extra-link clearfix">
+      <div class="footer__extra-left">
+        <ol class="clearfix">
+          <li class="footer__extra-link-item dropdown drop-target" data-dropdown-target="#menu-footer-lang">
+            <span><span class="icon icon-global"></span> Language <span class="icon icon-expand_less"></span></span>
+            
+          </li>
+          <li class="footer__extra-link-item dropdown drop-target" data-dropdown-target="#menu-footer-theme">
+            <span><span class="icon icon-global"></span> Theme <span class="icon icon-expand_less"></span></span>
+            
+          </li>
+        </ol>
+      </div>
+      <div class="footer__extra-right">
+        <ol class="clearfix"><li class="footer__extra-link-item"></li><li class="footer__extra-link-item"><script>(()=>{function e(e,n,t){return e.getAttribute(n)||t}function n(){l=i.width=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth,u=i.height=window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight}function c(){var t,o,i,a,m;r.clearRect(0,0,l,u),s.forEach(function(e,n){for(e.x+=e.xa,e.y+=e.ya,e.xa*=e.x>l||e.x<0?-1:1,e.ya*=e.y>u||e.y<0?-1:1,r.fillRect(e.x-.5,e.y-.5,1,1),o=n+1;o<d.length;o++)null!==(t=d[o]).x&&null!==t.y&&(i=e.x-t.x,a=e.y-t.y,(m=i*i+a*a)<t.max&&(t===y&&m>=t.max/2&&(e.x-=.03*i,e.y-=.03*a),m=(t.max-m)/t.max,r.beginPath(),r.lineWidth=m/2,r.strokeStyle="rgba("+x.c+","+(.2+m)+")",r.moveTo(e.x,e.y),r.lineTo(t.x,t.y),r.stroke()))}),w(c)}var l,u,d,t,o,i=document.createElement("canvas"),x=(t=(o=document.getElementsByTagName("script")).length,o=o[t-1],{l:t,z:e(o,"zIndex",-1),o:e(o,"opacity",.5),c:e(o,"color","0,0,0"),n:e(o,"count",39)}),a="c_n"+x.l,r=i.getContext("2d"),w=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||window.oRequestAnimationFrame||window.msRequestAnimationFrame||function(e){window.setTimeout(e,1e3/45)},m=Math.random,y={x:null,y:null,max:2e4};i.id=a,i.style.cssText="position:fixed;top:0;left:0;z-index:"+x.z+";opacity:"+x.o,document.getElementsByClassName("main")[0].appendChild(i),n(),window.onresize=n,window.onmousemove=function(e){e=e||window.event,y.x=e.clientX,y.y=e.clientY},window.onmouseout=function(){y.x=null,y.y=null};for(var s=[],h=0;x.n>h;h++){var f=m()*l,g=m()*u,p=2*m()-1,v=2*m()-1;s.push({x:f,y:g,xa:p,ya:v,max:6e3})}d=s.concat([y]),setTimeout(function(){c()},100)})();</script>
+</li><li class="footer__extra-link-item"></li><!-- <li class="footer__extra-link-item">Worker 0 in 22ms</li> -->
+          <!-- Prepare 4ms -->
+          <!-- Method 0ms -->
+	  <li class="footer__extra-link-item"><a href="https://oj.hailiangedu.com/d/d2022noipcsp/wiki/about">关于</a></li>
+          <li class="footer__extra-link-item"><span data-tooltip="Powered by Hydro v4.9.25">海亮教育信息学奥赛在线训练平台</span></li>
+	</ol>
+      </div>
+    </div>
+  </div></div>
+</div>
+</div>
+        <script>
+      var UiContextNew = '{"problemId":"C24012","problemNumId":369,"codeLang":"cc.std11","codeTemplate":"","pdoc":{"_id":"65a4954f206d4a040fd2201d","content":"{\\"zh\\":\\"[\u672C\u9898\u6837\u4F8B\u6587\u4EF6\u4FDD\u8BC1\u6765\u6E90\u4E8E\u8BC4\u6D4B\u6570\u636E](./369/file/permutation.zip?tid=65a49863206d4a040fd22157)\\\\n\\\\n## \u9898\u76EE\u63CF\u8FF0\\\\n\\\\n\u6709\u4E00\u4E2A\u5927\u5C0F\u4E3A $n$ \u7684\u6392\u5217 $P$ \u548C\u4E00\u4E2A\u6B63\u6574\u6570 $k$\uFF0C\u53EF\u4EE5\u5BF9\u6392\u5217\u8FDB\u884C\u64CD\u4F5C\uFF0C\u6BCF\u6B21\u64CD\u4F5C\u53EF\u4EE5\u9009\u62E9\u4E00\u4E2A\u533A\u95F4 $[l,r]$\uFF0C\u5C06\u5BF9\u5E94\u533A\u95F4\u8FDB\u884C\u7FFB\u8F6C\uFF08`reverse(P+l,P+r+1);`\uFF09\uFF0C\u5E76\u4EA7\u751F $r-l$ \u7684\u82B1\u8D39\u3002\\\\n\\\\n\u79F0\u4E00\u7EC4\u64CD\u4F5C\u662F\u53EF\u884C\u7684\uFF0C\u5F53\u4E14\u4EC5\u5F53\u6240\u6709\u64CD\u4F5C\u7684\u533A\u95F4\u5747\u4E0D\u4EA4\uFF0C\u4E14\u603B\u82B1\u8D39\u4E0D\u8D85\u8FC7 $k$\u3002\\\\n\\\\n\u6C42\u5BF9 $P$ \u8FDB\u884C\u4E00\u7EC4\u53EF\u884C\u64CD\u4F5C\u53EF\u80FD\u5F97\u5230\u7684\u6240\u6709\u7ED3\u679C\u6392\u5217\u4E2D\uFF0C\u5B57\u5178\u5E8F\u7B2C $x$ \u5C0F\u7684\u6392\u5217\u7684\u7B2C $y$ \u4E2A\u6570\u662F\u591A\u5C11\u3002\u9700\u8981\u5BF9 $q$ \u6B21\u4E0D\u540C\u7684\u8BE2\u95EE\u7ED9\u51FA\u7B54\u6848\u3002\\\\n\\\\n## \u8F93\u5165\u683C\u5F0F\\\\n\\\\n\u7B2C\u4E00\u884C\u4E09\u4E2A\u6570 $n,k,q$\uFF0C\u5206\u522B\u8868\u793A\u6392\u5217\u5927\u5C0F\uFF0C\u4FEE\u6539\u6B21\u6570\u9650\u5236\u4EE5\u53CA\u8BE2\u95EE\u6B21\u6570\u3002\\\\n\\\\n\u63A5\u4E0B\u6765\u4E00\u884C $n$ \u4E2A\u6570\uFF0C\u8868\u793A\u6392\u5217 $P$\u3002\\\\n\\\\n\u63A5\u4E0B\u6765 $q$ \u884C\uFF0C\u6BCF\u884C\u4E24\u4E2A\u6570 $x, y$ \u8868\u793A\u8BE2\u95EE\u3002\\\\n\\\\n## \u8F93\u51FA\u683C\u5F0F\\\\n\\\\n$q$ \u884C\uFF0C\u6BCF\u884C\u4E00\u4E2A\u6574\u6570\u8868\u793A\u7B54\u6848\u3002\u7279\u522B\u5730\uFF0C\u5982\u679C\u4E0D\u5B58\u5728\u7B2C $x$ \u4E2A\u6392\u5217\u5219\u8F93\u51FA $-1$\u3002\\\\n\\\\n```input1\\\\n5 4 8\\\\n3 1 2 5 4\\\\n2 3\\\\n5 3\\\\n10 5\\\\n6 2\\\\n5 2\\\\n10 4\\\\n6 5\\\\n2 5\\\\n```\\\\n\\\\n```output1\\\\n2\\\\n3\\\\n4\\\\n1\\\\n1\\\\n2\\\\n4\\\\n4\\\\n```\\\\n\\\\n```input2\\\\n2 4 5\\\\n2 1\\\\n10 2\\\\n8 2\\\\n10 1\\\\n2 2\\\\n3 1\\\\n```\\\\n\\\\n```output2\\\\n-1\\\\n-1\\\\n-1\\\\n1\\\\n-1\\\\n```\\\\n\\\\n## \u6570\u636E\u8303\u56F4\u4E0E\u63D0\u793A\\\\n\\\\n\u5BF9\u4E8E\u6240\u6709\u6570\u636E\u4FDD\u8BC1 $0\\\\\\\\lt n,q\\\\\\\\le 5\\\\\\\\times 10^5,0\\\\\\\\le k\\\\\\\\le 4,1\\\\\\\\le x\\\\\\\\le 10^{18},1\\\\\\\\le y\\\\\\\\le n$\\\\n\\\\n| \u5B50\u4EFB\u52A1\u7F16\u53F7 | \u6570\u636E\u8303\u56F4              | \u5206\u6570 | \u4F9D\u8D56  |\\\\n| ---------- | --------------------- | ---- | ----- |\\\\n| $1$        | $n,q\\\\\\\\le 100,k=0$      | $5$  | -     |\\\\n| $2$        | $n,q\\\\\\\\le 100$          | $10$ | $1$   |\\\\n| $3$        | $n,q\\\\\\\\le 1000$         | $10$ | $2$   |\\\\n| $4$        | $k\\\\\\\\le 1$              | $5$  | $1$   |\\\\n| $5$        | $k\\\\\\\\le 2$              | $10$ | $4$   |\\\\n| $6$        | $k\\\\\\\\le 3$              | $10$ | $5$   |\\\\n| $7$        | $n,q\\\\\\\\le 10^5$         | $30$ | $3$   |\\\\n| $8$        | $n,q\\\\\\\\le 5\\\\\\\\times 10^5$ | $20$ | $6,7$ |\\\\n\\"}","owner":3,"domainId":"d2022noipcsp","docType":10,"docId":369,"title":"\u6392\u5217\u7FFB\u8F6C\uFF08permutation\uFF09","tag":[],"hidden":true,"pid":"C24012","reference":{"domainId":"MainProblems","pid":1940},"config":{"count":0,"memoryMin":1024,"memoryMax":1024,"timeMin":6000,"timeMax":6000,"type":"fileio","langs":["cc","cc.std14o2"],"subType":"permutation"}},"canViewRecord":false,"postSubmitUrl":"/d/d2022noipcsp/p/369/submit?tid=65a49863206d4a040fd22157","getSubmissionsUrl":"/d/d2022noipcsp/record?fullStatus=true&pid=369&tid=65a49863206d4a040fd22157","getRecordDetailUrl":"/d/d2022noipcsp/record/%7Brid%7D?tid=65a49863206d4a040fd22157","pretestConnUrl":"record-conn?pretest=1&uidOrName=212&pid=369&domainId=d2022noipcsp&tid=65a49863206d4a040fd22157","tdoc":{"_id":"65a49863206d4a040fd22157","content":"$$","owner":3,"domainId":"d2022noipcsp","docType":30,"docId":"65a49863206d4a040fd22157","duration":null,"title":"20240116\u6A21\u62DF\u8D5B\uFF08Div. 1\uFF09","rule":"oi","beginAt":"2024-01-16T00:00:00.000Z","endAt":"2024-01-16T04:30:00.000Z","pids":[369,370,371],"attend":17,"rated":true,"allowViewCode":true,"assign":[],"autoHide":false,"lockAt":null,"maintainer":[]},"tsdoc":{"attend":1,"startAt":"2024-01-16T00:00:03.935Z"}}';
+      var UserContextNew = '{}';
+    </script>
+  
+
+<pre class="contest-timer" style="display:none"></pre><pre class="contest-timer" style="">04:29:16</pre><div style="display:none"></div><div class="omnibar" data-hotkey="esc:click" style="opacity:0;display:none;">
+      <div class="omnibar-main">
+        <div>
+          <input placeholder="Search">
+          <span class="icon icon-search"></span>
+        </div>
+        <div id="omnibar-content"></div>
+      </div>
+    </div><button class="omnibar-toggle" data-global-hotkey="ctrl+k:click">
+      <span class="icon icon-search"></span>
+    </button><div id="nprogress"><div class="bar" role="bar" style="transform: translate3d(-99.7286%, 0px, 0px); transition: all 200ms ease 0s;"><div class="peg"></div></div></div><div class="drop dropdown drop-element drop-element-attached-top drop-element-attached-right drop-target-attached-bottom drop-target-attached-right" style="top: 0px; position: fixed; transform: translateX(-664px) translateY(45px) translateZ(0px); right: 0px; z-index: 1001;"><div class="drop-content"><ol class="dropdown-target menu menu_more" id="menu-nav-more"><li class="menu__item">
+  <a href="https://oj.hailiangedu.com/d/d2022noipcsp/contest/65a49863206d4a040fd22157/problems" class="menu__link">
+    题目列表
+  </a>
+</li></ol></div></div><div data-tether-id="1" style="top: 0px; left: 0px; position: absolute;"></div></body></html>
