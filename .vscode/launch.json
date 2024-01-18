@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "f:/桌面/DL24zhaoyongze",
-      "program": "f:/桌面/DL24zhaoyongze/build/Debug/outDebug",
+      "cwd": "f:/桌面/Call_me_Eric/github repos/Call_me_Eric-s-Codes/codes",
+      "program": "f:/桌面/Call_me_Eric/github repos/Call_me_Eric-s-Codes/codes/build/Release/outRelease",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
