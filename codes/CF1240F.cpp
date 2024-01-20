@@ -8,7 +8,7 @@ inline int read(){
     while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + (ch ^ 48);ch = getchar();}
     return x * f;
 }
-const int maxn = 300 + 10, maxm = 2e3 + 10,INF = 0x3f3f3f3f;
+const int maxn = 1e5 + 10, maxm = 1e5 + 10,INF = 0x3f3f3f3f;
 int n, m, k;
 typedef pair<int,int> pii;
 pii edg[maxm];
@@ -16,13 +16,13 @@ vector<pii> e[maxn];
 map<pii,int> mp;
 int deg[maxn];
 int siz[maxn], st[maxn];
-int ans[maxn];
+int ans[maxm];
 
 void dfs(int u,int v,int posl,int posr){
     for(auto &i : e[v]){
         if(i.first == posl){
             i.first = posr;
-            dfs(u,i.second,posr,posl);
+            dfs(v,i.second,posr,posl);
         }
     }
     for(auto &i : e[v])if(i.second == u)i.first = posl;
@@ -44,8 +44,7 @@ void main(){
         e[st[u]].push_back(make_pair(INF,st[v]));
         e[st[v]].push_back(make_pair(INF,st[u]));
         edg[i] = make_pair(st[u], st[v]);
-        mp[edg[i]] = i;
-        deg[u]++;deg[v]++;
+        mp[edg[i]] = i; deg[u]++;deg[v]++;
         if(deg[u] == k){++st[u];deg[u] = 0;}
         if(deg[v] == k){++st[v];deg[v] = 0;}
     }
@@ -72,7 +71,7 @@ signed main(){
     auto starttime = clock();
     Call_me_Eric::main();
     auto endtime = clock();
-    cerr << (&stmemory - &edmemory) / 1024.0 / 1024.0 << "Mib cost.\n";
-    cerr << 1.0 * (endtime - starttime) / CLOCKS_PER_SEC * 1000.0 << " ms cost.\n";
+    cerr << (&stmemory - &edmemory) / 1024.0 / 1024.0 << " Mib cost.\n";
+    cerr << 1.0 * (endtime - starttime) / CLOCKS_PER_SEC << " Sec cost.\n";
     return 0;
 }
