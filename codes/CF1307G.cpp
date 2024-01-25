@@ -39,7 +39,7 @@ bool SPFA(){
 	return pre[T] != 0;
 }
 vector<pair<int,int> > pr;
-pair<int,int> MCMF(int S,int T){
+void MCMF(int S,int T){
 	int mincost = 0, maxflow = 0;
 	while(SPFA()){
 		int fl = INF;//printf("maxflow = %d\n",maxflow);
