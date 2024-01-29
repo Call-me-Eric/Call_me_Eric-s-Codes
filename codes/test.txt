@@ -1,0 +1,3 @@
+:again
+tmp > test.in
+CF1630F < test.in > test.out
