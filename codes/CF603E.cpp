@@ -1,4 +1,3 @@
-// LUOGU_RID: 138475062
 #include<bits/stdc++.h>
 using namespace std;
 inline int read(){
@@ -9,13 +8,13 @@ inline int read(){
 }
 const int maxn = 1e5 + 10, maxm = 3e5 + 10;
 int n, m;
-
+ 
 struct edge{
     int fr, to ,wei, id;
     edge(int fr = 0,int to = 0,int wei = 0,int id = 0):fr(fr),to(to),wei(wei),id(id){}
     friend bool operator < ( edge a,edge b){return a.wei < b.wei;}
 }e[maxm];
-
+ 
 struct mystk{
     struct node{
         int x, y, dep, updodd, siz;
@@ -84,7 +83,7 @@ struct Segment_Tree{
         dsu.trace(ver);
     }
 }tree;
-
+ 
 signed main(){
     n = read(); m = read();int u, v, w;
     if(n & 1){for(int i = 1;i <= m;i++)puts("-1");return 0;}
@@ -96,3 +95,4 @@ signed main(){
     for(int i = 1;i <= m;i++)printf("%d\n",ans[i]);
     return 0;
 }
+ 
