@@ -21,33 +21,36 @@ void addd(int u,int v,int cap,int cost){add(u, v, cap,cost); add(v, u, 0, -cost)
 vector<int> b[maxn], t[maxn];
 int d[maxn];
 
-int to[maxn], dis[maxn];bool book[maxn];
-queue<int> que;
+bool book[maxn];int dis[maxn],pre[maxn];
+
 bool SPFA(int S,int T){
-    for(int i = 0;i <= T;i++)to[i] = book[i] = 0,dis[i] = INF;
-    while(!que.empty())que.pop();
-    dis[S] = 0;que.push(S);book[S] = 1;
+    queue<int> que;
+    for(int i = 0;i <= T;i++)dis[i] = INF,book[i] = pre[i] = 0;
+    que.push(S);book[S] = true;dis[S] = 0;
     while(!que.empty()){
-        int u = que.front();que.pop();
+        int u = que.front();que.pop();book[u] = false;
         for(int i = head[u];i;i = e[i].nexte){
-            int v = e[i].to, w = e[i].cost;
-            if(e[i].cap > e[i].flow && dis[v] > dis[u] + w){
-                dis[v] = dis[u] + w;to[v] = i;
-                if(!book[v]){que.push(v);book[v] = 1;}
+            int v = e[i].to;
+            if((e[i].cap > e[i].flow) && (dis[v] > dis[u] + e[i].cost)){
+                pre[v] = i;dis[v] = dis[u] + e[i].cost;
+                if(!book[v]){que.push(v);book[v] = true;}
             }
         }
     }
-    return dis[T] < INF;
+    return pre[T] != 0;
 }
+
 pair<int,int> MCMF(int S,int T){
-    int mincost = 0,maxflow = 0;
+    int mincost = 0, maxflow = 0;
     while(SPFA(S,T)){
-        int tmp = INF;
-        for(int i = to[T];i;i = to[e[i ^ 1].to])
-            tmp = min(tmp,e[i].cap - e[i].flow);
-        mincost += dis[T] * tmp;maxflow += tmp;
-        for(int i = to[T];i;i = to[e[i ^ 1].to])
-            e[i].flow += tmp;
+        int fl = INF;
+        for(int i = pre[T];i;i = pre[e[i ^ 1].to])
+            fl = min(fl,e[i].cap - e[i].flow);
+            
+        mincost += fl * dis[T];maxflow += fl;
+        for(int i = pre[T];i;i = pre[e[i ^ 1].to]){
+            e[i].flow += fl;e[i ^ 1].flow -= fl;
+        }
     }
     return make_pair(maxflow,mincost);
 }
