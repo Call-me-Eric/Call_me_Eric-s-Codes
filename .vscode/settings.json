@@ -60,6 +60,9 @@
     "ostream": "cpp",
     "*.tcc": "cpp",
     "duel-ans": "cpp",
-    "random": "cpp"
+    "random": "cpp",
+    "chrono": "cpp",
+    "bitset": "cpp",
+    "algorithm": "cpp"
   }
 }
