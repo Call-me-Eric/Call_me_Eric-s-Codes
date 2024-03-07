@@ -1,152 +1,150 @@
 #include<bits/stdc++.h>
-#define ll long long
-#define IOS ios::sync_with_stdio(false),cin.tie(0),cout.tie(0);
-#define file(x) freopen(x".in","r",stdin),freopen(x".out","w",stdout)
-#define inf 0x3f3f3f3f
-#define endl "\n"
-#define mk make_pair
 using namespace std;
-const int N = 2e5+10;
-struct node{
-	bitset<40>code;
-	int son;
-	int col;
-}ip[N],x; 
-int n,tot=1;
-struct tree{
-	int ls,rs;
-	int col;
-}t[N<<6];
-int cover,need,cnt,top;
-node ans[N];
-bool f;
-int white[N<<4],black[N<<4];
-inline void insert(node IP){
-	int p = 1;
-	for(int i = 1;i <= IP.son;i ++){
-		if(t[p].col != 0 && t[p].col != IP.col){
-			f = 1;
-			return ;
-		}
-		if(IP.code[i]){
-			if(t[p].rs == -1) t[p].rs = ++tot;
-			p = t[p].rs;
-		}else{
-			if(t[p].ls == -1) t[p].ls = ++tot;
-			p = t[p].ls;
-		}
+const int N = 1e6+7;
+int n,m,q;
+int c[N];
+int idx=0;struct dsu
+{
+	int fa[N],siz[N];
+	int find(int x)
+	{
+		if(x==fa[x])return x;
+		return fa[x]=find(fa[x]);
 	}
-	if(t[p].col != 0 && t[p].col != IP.col){
-		f = 1;
-		return ;
+	void merge(int x,int y)
+	{
+		if(find(x)==find(y))return;
+		x=find(x);y=find(y);
+		fa[x]=y;
+		siz[y]+=siz[x];
 	}
-	t[p].col = IP.col;
+}A,B;
+struct edge 
+{
+	int a,b,next,id;
+}e[N];
+const int M = 1e6+7;
+int flink[M],t=0;
+int get(int a,int b)
+{
+	int h=(1ll*a*131%M+b)%M;
+	for(int i=flink[h];i;i=e[i].next)
+	if(e[i].a==a&&e[i].b==b)return e[i].id;
+	e[++t].a=a;
+	e[t].b=b;
+	e[t].id=++idx;
+	e[t].next=flink[h];
+	flink[h]=t;
+	return idx;
 }
-inline void solve(int u){
-	white[u] = (t[u].col==1),black[u] = (t[u].col==-1);
-	if(t[u].ls != -1){
-		solve(t[u].ls);
-		if(white[t[u].ls] == 1)white[u] = 1;
-		black[u] += black[t[u].ls];
-	}
-	if(t[u].rs != -1){
-		solve(t[u].rs);
-		if(white[t[u].rs] == 1)white[u] = 1;
-		black[u] += black[t[u].rs];
-	}
+int qry(int a,int b)
+{
+	int h=(1ll*a*131%M+b)%M;
+	for(int i=flink[h];i;i=e[i].next)
+	if(e[i].a==a&&e[i].b==b)return e[i].id;
+	return 0;
 }
-inline void Find_Ans(int u,node p,int dep,int tp){
-//	cout << u << " ls: " << t[u].ls << " rs: " << t[u].rs << endl;
-	if(dep)p.code[dep] = tp;
-	if(white[u]){
-		if(t[u].col == -1){
-			f = 1;
-			return ;
-		}
-		if(t[u].ls != -1)Find_Ans(t[u].ls,p,dep+1,0);
-		if(t[u].rs != -1)Find_Ans(t[u].rs,p,dep+1,1);
-	}else{
-		p.son = dep;
-		ans[++ cnt] = p;
-		cover += black[u];
-		return ;
-	}
+#define PII pair<int,int>
+#define mk(x,y) make_pair(x,y)
+#define X(x) x.first
+#define Y(x) x.second
+typedef long long LL;
+inline int read() {
+	char ch = getchar(); int x = 0;
+	while (!isdigit(ch)) {ch = getchar();}
+	while (isdigit(ch)) {x = x * 10 + ch - 48; ch = getchar();}
+	return x;
 }
-bool operator < (node A,node B){
-	if(A.son == B.son){
-		if(A.col == B.col){
-			for(int i = 1;i <= 32;i ++)if(A.code[i] != B.code[i])return A.code[i] < B.code[i];
-		}
-		return A.col < B.col;
-	}
-	return A.son < B.son;
+void write(LL x) {
+	if (!x) return;
+	write(x / 10); putchar(x % 10 + '0');
 }
-map<node,int>vis;
-int main(){
-	cin >> n;
-	for(int i = 1;i < N<<4;i ++)t[i].ls = t[i].rs = -1;
-	for(int i = 1;i <= n;i ++){
-		string s;cin >> s;node temp;
-		temp.col = (s[0]=='+'?1:-1);
-		int res = 0,st = 1,nw;bool fl = 0;
-		for(int j = 1;j < s.size();j ++){
-			if(s[j] == '.'){
-				nw = st*8;
-				while(res){
-					temp.code[nw --] = res&1;
-					res >>= 1;
-				}
-				res = 0;
-				st ++;
-			}
-			if(isdigit(s[j]))res = res * 10 + s[j]-48;
-			if(s[j] == '/'){
-				nw = st*8;
-				while(res){
-					temp.code[nw --] = res&1;
-					res >>= 1;
-				}
-				res = 0;
-				st ++;
-				res = 0,fl = 1;	
-			}
-		}
-		if(fl)temp.son = res;
-		else{
-			nw = st*8;
-			while(res){
-				temp.code[nw --] = res&1;
-				res >>= 1;
-			}
-			temp.son = 32;
-		}
-		if(vis[temp])continue;
-		vis[temp] = 1;
-		ip[++top] = temp;
-		if(temp.col == -1)need ++;
+inline void print(LL x, char ch = '\n') {
+	if (!x) putchar('0');
+	else write(x);
+	putchar(ch);
+}
+vector<int> E[N];
+LL ans[N];
+int U[N],V[N];
+int seq[2*N],tot=0;
+bool mark[N];
+LL ext[N];
+int vis[N],tag;
+int main()
+{
+	freopen("tmp.in","r",stdin);
+	freopen("ans.out","w",stdout);
+	n = read(); q = read();
+	for(int i=1;i<=n;i++)
+	{
+		c[i] = read();
+		A.fa[i]=i;
+		A.siz[i]=1;
 	}
-	n = top;
-	sort(ip+1,ip+1+n);
-	for(int i = 1;i <= n;i ++){
-		insert(ip[i]);
-		if(f==1)return cout<<-1<<endl,0;
-	}
-	solve(1);
-	Find_Ans(1,x,0,0);
-	if(need > cover || f == 1)return cout << -1 << endl,0;
-	cout << cnt << endl;
-	for(int i = cnt;i;i--){
-		node tmp = ans[i];
-		int st = 1;
-		for(int j = 1;j <= 4;j ++){
-			int res = 0;
-			for(int i = st;i <= st + 7;i ++)res = (res<<1) + tmp.code[i];
-			st += 8;
-			cout << res;
-			if(j!=4)cout<<'.';
+	for(int i=2;i<=n;i++)
+	{
+		int x;
+		x = read();
+		if(c[i]==c[x]) A.merge(x,i);
+		else 
+		{
+			int cx=c[x],cy=c[i];
+			if(cx>cy)swap(cx,cy);
+			++m;
+			U[m]=x;
+			V[m]=i;
+			E[get(cx,cy)].push_back(m);
 		}
-			cout << '/' << tmp.son;
-		cout << endl;
+	}
+	for(int i=1;i<=m;i++)
+	{
+		U[i]=A.find(U[i]);
+		V[i]=A.find(V[i]);
+		mark[U[i]]=1;
+		mark[V[i]]=1;
+	}
+	for(int i=1;i<=n;i++)
+	if(A.find(i)==i)
+	ext[c[i]]+=1ll*A.siz[i]*A.siz[i];
+	for(int r=1;r<=idx;r++)
+	{
+		tot=0;++tag; 
+		for(auto p:E[r])
+		{
+			int x=U[p],y=V[p];
+			if(vis[x]!=tag)vis[x]=tag,seq[++tot]=x;
+			if(vis[y]!=tag)vis[y]=tag,seq[++tot]=y;
+		}
+		LL res=0;
+		for(int i=1;i<=tot;i++)
+		{
+			B.fa[seq[i]]=seq[i];
+			B.siz[seq[i]]=A.siz[seq[i]];
+			res-=1ll*A.siz[seq[i]]*A.siz[seq[i]];
+		}
+		for(auto p:E[r])
+		{
+			int x=U[p],y=V[p];
+			B.merge(x,y);
+		}
+		for(int i=1;i<=tot;i++)
+		{
+			int x=seq[i];
+			if(B.find(x)==x)
+			res+=1ll*B.siz[x]*B.siz[x];
+		}
+		ans[r]=res;
+	}
+	while(q--)
+	{
+		int x,y;
+		x = read(); y = read();
+		assert(x != y);
+		if(x>y)swap(x,y);
+		LL res=ext[x]+ext[y];
+		if(qry(x,y))res+=ans[qry(x,y)];
+		print(res);
 	}
 	return 0;
 }
