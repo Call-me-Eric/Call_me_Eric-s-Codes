@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Eric/Call_me_Eric/历次模拟/2024.2.28模拟",
-      "program": "d:/Eric/Call_me_Eric/历次模拟/2024.2.28模拟/build/Debug/outDebug",
+      "cwd": "c:/Users/Eric/AppData/Local/Temp/Rar$DIa8756.48910",
+      "program": "c:/Users/Eric/AppData/Local/Temp/Rar$DIa8756.48910/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
