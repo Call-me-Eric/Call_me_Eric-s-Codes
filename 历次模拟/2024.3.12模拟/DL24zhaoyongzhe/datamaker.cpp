@@ -8,21 +8,32 @@ inline int read(){
     while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + (ch ^ 48);ch = getchar();}
     return x * f;
 }
-
+const int maxn = 4e5 + 10;
+int n = 5e3 , m = n - 1;
+vector<pair<int,int> > edg;
 void main(){
     srand(time(0));mt19937 rnd(rand());
-    freopen("tmp.in","w",stdout);
-    int k = 17, T = 1;
-    printf("%d\n",T);
-    for(int i = 1;i <= T;i++){
-        printf("%d\n",k); int n = (1 << k + 1);
-        for(int j = 1;j <= n;j++){printf("%lld ",(long long)rnd() % (1ll << k + k));}puts("");
+    printf("%d %d\n",n,m);
+    for(int i = 2;i <= n;i++){
+        // int u = i, v = rnd() % (i - 1) + 1;
+        int u = i - 1, v = i;
+        edg.push_back(make_pair(u, v));
+    }
+    for(int i = n;i <= m;i++){
+        int u = rnd() % (n) + 1, v = rnd() % (n) + 1;
+        v = (v + (u == v)) % n + 1;
+        edg.push_back(make_pair(u, v));
+    }
+    random_shuffle(edg.begin(),edg.end());
+    for(auto i : edg){
+        printf("%d %d\n",i.first,i.second);
     }
     return;
 }
 };
 bool edmemory;
 signed main(){
+    freopen("alphadog.in","w",stdout);
     auto stclock = clock();
     Call_me_Eric::main();
     auto edclock = clock();

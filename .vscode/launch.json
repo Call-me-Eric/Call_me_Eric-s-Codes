@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Eric/AppData/Local/Temp/Rar$DIa8756.48910",
-      "program": "c:/Users/Eric/AppData/Local/Temp/Rar$DIa8756.48910/build/Debug/outDebug",
+      "cwd": "c:/Users/Lenovo/Desktop/Call_me_Eric/Call_me_Eric-s-Codes/codes",
+      "program": "c:/Users/Lenovo/Desktop/Call_me_Eric/Call_me_Eric-s-Codes/codes/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

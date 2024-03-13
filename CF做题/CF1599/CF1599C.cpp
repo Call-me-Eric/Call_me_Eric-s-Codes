@@ -8,15 +8,19 @@ inline int read(){
     while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + (ch ^ 48);ch = getchar();}
     return x * f;
 }
-
+const int maxn = 1e3 + 10;
+int n;double p;
 void main(){
-    srand(time(0));mt19937 rnd(rand());
-    freopen("tmp.in","w",stdout);
-    int k = 17, T = 1;
-    printf("%d\n",T);
-    for(int i = 1;i <= T;i++){
-        printf("%d\n",k); int n = (1 << k + 1);
-        for(int j = 1;j <= n;j++){printf("%lld ",(long long)rnd() % (1ll << k + k));}puts("");
+    scanf("%d%lf",&n,&p);
+    for(int i = 0;i <= n;i++){
+        double ans = 0;
+        if(i >= 1 && n - i >= 2)ans += 3.0 * (i) * (n - i) * (n - i - 1) * 0.5;
+        if(i >= 2 && n - i >= 1)ans += 3.0 * (i) * (i - 1) * (n - i) * 1;
+        if(i >= 3 && n - i >= 0)ans += (i) * (i - 1) * (i - 2) * 1;
+        // printf("i = %d, ans = %lf\n",i,ans / n / (n - 1) / (n - 2));
+        if(ans >= p * (n) * (n - 1) * (n - 2)){
+            printf("%d\n",i);break;
+        }
     }
     return;
 }
