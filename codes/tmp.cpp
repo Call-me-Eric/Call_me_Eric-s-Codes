@@ -10,14 +10,9 @@ inline int read(){
 }
 
 void main(){
-    srand(time(0));mt19937 rnd(rand());
-    freopen("tmp.in","w",stdout);
-    int k = 17, T = 1;
-    printf("%d\n",T);
-    for(int i = 1;i <= T;i++){
-        printf("%d\n",k); int n = (1 << k + 1);
-        for(int j = 1;j <= n;j++){printf("%lld ",(long long)rnd() % (1ll << k + k));}puts("");
-    }
+    set<int> st;
+    st.insert(1);st.insert(3);st.insert(2);
+    for(int i : st)printf("%d ",i);
     return;
 }
 };
