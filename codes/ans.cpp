@@ -1,150 +1,91 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
+
 using namespace std;
-const int N = 1e6+7;
-int n,m,q;
-int c[N];
-int idx=0;struct dsu
-{
-	int fa[N],siz[N];
-	int find(int x)
-	{
-		if(x==fa[x])return x;
-		return fa[x]=find(fa[x]);
+
+const int N=231231,lb=30,inf=0x3f3f3f3f;
+
+int a[N],v;
+
+namespace ST{
+	int s[N][18];
+	void build(int n){
+		for(int i=1;i<=n;++i) s[i][0]=a[i];
+		for(int l=1;(1<<l)<=n;++l) for(int i=1;i+(1<<l)-1<=n;++i)
+			s[i][l]=max(s[i][l-1],s[i+(1<<l-1)][l-1]);
 	}
-	void merge(int x,int y)
-	{
-		if(find(x)==find(y))return;
-		x=find(x);y=find(y);
-		fa[x]=y;
-		siz[y]+=siz[x];
+	int mx(int l,int r){
+		int g=__lg(r-l+1);
+		return max(s[l][g],s[r-(1<<g)+1][g]);
 	}
-}A,B;
-struct edge 
-{
-	int a,b,next,id;
-}e[N];
-const int M = 1e6+7;
-int flink[M],t=0;
-int get(int a,int b)
-{
-	int h=(1ll*a*131%M+b)%M;
-	for(int i=flink[h];i;i=e[i].next)
-	if(e[i].a==a&&e[i].b==b)return e[i].id;
-	e[++t].a=a;
-	e[t].b=b;
-	e[t].id=++idx;
-	e[t].next=flink[h];
-	flink[h]=t;
-	return idx;
 }
-int qry(int a,int b)
-{
-	int h=(1ll*a*131%M+b)%M;
-	for(int i=flink[h];i;i=e[i].next)
-	if(e[i].a==a&&e[i].b==b)return e[i].id;
-	return 0;
+
+namespace sgt{
+	#define ls(x) (x<<1)
+	#define rs(x) (x<<1|1)
+	struct node{
+		int l[lb],r[lb],res;
+		#define l(x) x.l
+		#define r(x) x.r
+		#define res(x) x.res
+	}t[N<<2],S;
+	node mrg(node L,node R,int m){
+		res(S)=min(res(L),res(R));
+		int cr=0;for(int i=lb-1,nw;~i;--i){
+			int r=l(R)[i]<inf?ST::mx(m+1,l(R)[i]):inf,
+				l=r(L)[i]?ST::mx(r(L)[i],m):inf;
+			nw=max(min(l,r),cr);
+			if(v&(1<<i)){
+				cr=nw;if((1<<i)==(v&-v)) res(S)=min(res(S),nw);
+			}else res(S)=min(res(S),nw);
+		}
+		for(int i=0;i<lb;++i)
+			l(S)[i]=min(l(L)[i],l(R)[i]),r(S)[i]=max(r(L)[i],r(R)[i]);
+		return S;
+	}
+	void set(int u,int p,int x){
+		for(int i=0;i<lb;++i) x&(1<<i)?l(t[u])[i]=r(t[u])[i]=p:
+			(l(t[u])[i]=inf,r(t[u])[i]=0);
+		res(t[u])=x>=v?ST::mx(p,p):inf;
+	}
+	void build(int now,int ln,int rn){
+		if(ln==rn) return set(now,ln,a[ln]);
+		int mid=ln+rn>>1;
+		build(ls(now),ln,mid);
+		build(rs(now),mid+1,rn);
+		t[now]=mrg(t[ls(now)],t[rs(now)],mid);
+	}
+	void upd(int now,int ln,int rn,int p,int x){
+		if(ln==rn) return set(now,p,x);
+		int mid=ln+rn>>1;
+		if(p<=mid) upd(ls(now),ln,mid,p,x);
+		else upd(rs(now),mid+1,rn,p,x);
+		t[now]=mrg(t[ls(now)],t[rs(now)],mid);
+	}
+	node qry(int now,int ln,int rn,int l,int r){
+		if(l<=ln&&rn<=r) return t[now];
+		int mid=ln+rn>>1;bool flg=0;node res;
+		if(l<=mid) res=qry(ls(now),ln,mid,l,r),flg=1;
+		if(r>mid) S=qry(rs(now),mid+1,rn,l,r),flg?res=mrg(res,S,mid):res=S;
+		return res;
+	}
 }
-#define PII pair<int,int>
-#define mk(x,y) make_pair(x,y)
-#define X(x) x.first
-#define Y(x) x.second
-typedef long long LL;
-inline int read() {
-	char ch = getchar(); int x = 0;
-	while (!isdigit(ch)) {ch = getchar();}
-	while (isdigit(ch)) {x = x * 10 + ch - 48; ch = getchar();}
-	return x;
-}
-void write(LL x) {
-	if (!x) return;
-	write(x / 10); putchar(x % 10 + '0');
-}
-inline void print(LL x, char ch = '\n') {
-	if (!x) putchar('0');
-	else write(x);
-	putchar(ch);
-}
-vector<int> E[N];
-LL ans[N];
-int U[N],V[N];
-int seq[2*N],tot=0;
-bool mark[N];
-LL ext[N];
-int vis[N],tag;
+
 int main()
 {
 	freopen("tmp.in","r",stdin);
-	freopen("ans.out","w",stdout);
-	n = read(); q = read();
-	for(int i=1;i<=n;i++)
-	{
-		c[i] = read();
-		A.fa[i]=i;
-		A.siz[i]=1;
+	freopen("tmp.out","w",stdout);
+	auto stclock = clock();
+	int T;scanf("%d",&T);while(T--){
+		int n;scanf("%d%d",&n,&v);
+		for(int i=1;i<=n;++i) scanf("%d",a+i);
+		ST::build(n);
+		for(int i=1;i<=n;++i) scanf("%d",a+i);
+		sgt::build(1,1,n);
+		int q,f,x,y;scanf("%d",&q);while(q--){scanf("%d%d%d",&f,&x,&y);switch(f){
+			case 1:sgt::upd(1,1,n,x,y);break;
+			case 2:int r=sgt::qry(1,1,n,x,y).res;printf("%d ",r<inf?r:-1);
+		}}puts("");
 	}
-	for(int i=2;i<=n;i++)
-	{
-		int x;
-		x = read();
-		if(c[i]==c[x]) A.merge(x,i);
-		else 
-		{
-			int cx=c[x],cy=c[i];
-			if(cx>cy)swap(cx,cy);
-			++m;
-			U[m]=x;
-			V[m]=i;
-			E[get(cx,cy)].push_back(m);
-		}
-	}
-	for(int i=1;i<=m;i++)
-	{
-		U[i]=A.find(U[i]);
-		V[i]=A.find(V[i]);
-		mark[U[i]]=1;
-		mark[V[i]]=1;
-	}
-	for(int i=1;i<=n;i++)
-	if(A.find(i)==i)
-	ext[c[i]]+=1ll*A.siz[i]*A.siz[i];
-	for(int r=1;r<=idx;r++)
-	{
-		tot=0;++tag; 
-		for(auto p:E[r])
-		{
-			int x=U[p],y=V[p];
-			if(vis[x]!=tag)vis[x]=tag,seq[++tot]=x;
-			if(vis[y]!=tag)vis[y]=tag,seq[++tot]=y;
-		}
-		LL res=0;
-		for(int i=1;i<=tot;i++)
-		{
-			B.fa[seq[i]]=seq[i];
-			B.siz[seq[i]]=A.siz[seq[i]];
-			res-=1ll*A.siz[seq[i]]*A.siz[seq[i]];
-		}
-		for(auto p:E[r])
-		{
-			int x=U[p],y=V[p];
-			B.merge(x,y);
-		}
-		for(int i=1;i<=tot;i++)
-		{
-			int x=seq[i];
-			if(B.find(x)==x)
-			res+=1ll*B.siz[x]*B.siz[x];
-		}
-		ans[r]=res;
-	}
-	while(q--)
-	{
-		int x,y;
-		x = read(); y = read();
-		assert(x != y);
-		if(x>y)swap(x,y);
-		LL res=ext[x]+ext[y];
-		if(qry(x,y))res+=ans[qry(x,y)];
-		print(res);
-	}
-	return 0;
+    auto edclock = clock();
+	cerr << (edclock - stclock) * 1.0 / CLOCKS_PER_SEC << " Sec cost.\n";
 }

@@ -9,15 +9,32 @@ inline int read(){
     return x * f;
 }
 
+mt19937 rnd(114514);
+int range = 1 << 30;
+int getint(int x = 0){return (1ll * x * rnd() % range + rnd()) % range;}
 void main(){
-    set<int> st;
-    st.insert(1);st.insert(3);st.insert(2);
-    for(int i : st)printf("%d ",i);
+    int T = 1;
+    srand(time(0));
+    printf("%d\n",T);
+    while(T--){
+        int n = 2e5, X = getint(T), m = 2e5;
+        printf("%d %d\n",n,10);
+        for(int i = 1;i <= n;i++)printf("%d ",getint(i));puts("");
+        for(int i = 1;i <= n;i++)printf("%d ",getint(i));puts("");
+        printf("%d\n",m);int opt = 0, u = 0, v = 0;
+        for(int i = 1;i <= m;i++){
+            opt = getint(opt) & 1, u = getint(u) % n + 1;
+            if(!opt){v = getint(v);}
+            else {v = getint(v) % n + 1;if(v < u)swap(u,v);}
+            printf("%d %d %d\n",opt + 1,u,v);
+        }
+    }
     return;
 }
 };
 bool edmemory;
 signed main(){
+    freopen("tmp.in","w",stdout);
     auto stclock = clock();
     Call_me_Eric::main();
     auto edclock = clock();
