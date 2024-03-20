@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#define int long long
 using namespace std;
 bool stmemory;
 namespace Call_me_Eric{
@@ -8,26 +9,28 @@ inline int read(){
     while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + (ch ^ 48);ch = getchar();}
     return x * f;
 }
-
+const int maxn = 5e5 + 10;
 mt19937 rnd(114514);
 int range = 1 << 30;
 int getint(int x = 0){return (1ll * x * rnd() % range + rnd()) % range;}
+int p[maxn], a[maxn];
 void main(){
-    int T = 1;
     srand(time(0));
-    printf("%d\n",T);
-    while(T--){
-        int n = 2e5, X = getint(T), m = 2e5;
-        printf("%d %d\n",n,10);
-        for(int i = 1;i <= n;i++)printf("%d ",getint(i));puts("");
-        for(int i = 1;i <= n;i++)printf("%d ",getint(i));puts("");
-        printf("%d\n",m);int opt = 0, u = 0, v = 0;
-        for(int i = 1;i <= m;i++){
-            opt = getint(opt) & 1, u = getint(u) % n + 1;
-            if(!opt){v = getint(v);}
-            else {v = getint(v) % n + 1;if(v < u)swap(u,v);}
-            printf("%d %d %d\n",opt + 1,u,v);
-        }
+    int n = 5e5, m = 5e5;
+    printf("%lld %lld\n",n,m);
+    for(int i = 1;i <= n;i++)p[i] = n - i + 1;
+    for(int i = 1;i <= n;i++){
+        swap(p[i],p[getint(getint(i)) % n + 1]);
+        if(p[i] == i){swap(p[i],p[(i + 1) % n + 1]);}
+        a[i] = getint(i) % n + 1;
+    }
+    for(int i = 1;i <= n;i++)printf("%lld ",p[i]);puts("");
+    for(int i = 1;i <= n;i++)printf("%lld ",a[i]);puts("");
+    for(int i = 1;i <= m;i++){
+        int opt = (getint(i) & 1) + 1, l = getint(i) % n + 1, r = getint(l) % n + 1;
+        if(opt == 2){if(l > r)swap(l,r);}
+        else r = getint(r) % n + 1;
+        printf("%lld %lld %lld\n",opt,l,r);
     }
     return;
 }

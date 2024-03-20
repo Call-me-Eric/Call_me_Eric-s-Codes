@@ -1,7 +1,8 @@
+@echo off
 :again
-datamaker
+tmp
 ans
-P10180
+P5604
 fc tmp.out ans.out
 if not errorlevel 1 goto again
 pause
