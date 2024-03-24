@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/desktop/Desktop/Call_me_Eric/Call_me_Eric-s-Codes",
-      "program": "d:/desktop/Desktop/Call_me_Eric/Call_me_Eric-s-Codes/build/Debug/outDebug",
+      "cwd": "d:/Eric/Call_me_Eric",
+      "program": "d:/Eric/Call_me_Eric/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
