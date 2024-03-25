@@ -1,4 +1,4 @@
-
+*.mp4
 *.mkv
 *.ans
 *.in
@@ -7,3 +7,5 @@
 *.7z
 *.rar
 *.exe
+*.flv
+*.wmv

@@ -1,132 +1,329 @@
 #include<bits/stdc++.h>
 using namespace std;
-inline int read(){
-    int x = 0, f = 1;char ch = getchar();
-    while(ch < '0' || ch > '9'){if(ch == '-') f =-1;ch = getchar();}
-    while(ch >= '0' && ch <= '9'){x = (x << 1) + (x << 3) + (ch ^ 48);ch = getchar();}
-    return x * f;
+
+#define int long long
+int n,m;
+int cnt,head[400010],to[400010],nex[400010],val[4000010];
+int idx,fa[2000010],son[2000010],top[2000010],dep[2000010],dfn[2000010],siz[2000010],tmp[2000010],w[2000010];
+int sumn[200010<<2],maxn[200010<<2],minn[200010<<2],lz[200010<<2];
+struct node
+{
+	int x,y;
+}id[2000010];
+
+void add(int x,int y,int w)
+{
+	nex[++cnt]=head[x];
+	to[cnt]=y;
+	val[cnt]=w;
+	head[x]=cnt;
 }
-const int maxn = 2e5 + 10;
-struct LCT{
-    struct node{
-        int fa, ch[2];int tag;
-        node(int fa = 0,int c0 = 0,int c1 = 0,int tag = 0):fa(fa),tag(tag){ch[0] = c0;ch[1] = c1;}
-    }d[maxn];
-    #define FA(p) d[p].fa
-    #define C(p,x) d[p].ch[x]
-    void maintain(int p){}
-    int get(int p){return p == C(FA(p),0) ? 0 : (p == C(FA(p),1) ? 1 : -1);}
-    void pushdown(int p){
-        if(d[p].tag){
-            swap(C(p,0),C(p,1)); d[p].tag = 0;
-            d[C(p,0)].tag ^= 1;d[C(p,1)].tag ^= 1;
-        }
-    }
-    void pushdownall(int p){
-        if(get(p) != -1)pushdownall(FA(p));
-        pushdown(p);
-    }
-    void connect(int p,int f,int chk){FA(p) = f;if(chk == 1 || chk == 0)C(f,chk) = p;}
-    void rotate(int x){
-        int y = FA(x), z = FA(y), chkx = get(x), chky = get(y);
-        int u = chkx != -1 ? C(x,chkx ^ 1) : 0;
-        connect(u, y, chkx);connect(y, x, chkx ^ 1);connect(x,z,chky);
-        maintain(y);maintain(x);
-    }
-    void splay(int p){
-        pushdownall(p);
-        for(int f = FA(p);f = FA(p),get(p) != -1;rotate(p))
-            if(get(f) != -1)rotate(get(f) == get(p) ? f : p);
-    }
-    void access(int p){
-        int rs = 0;
-        while(p){
-            splay(p); C(p,1) = rs; rs = p;
-            maintain(p);p = FA(p);
-        }
-    }
-    void makeroot(int p){access(p);splay(p);d[p].tag ^= 1;}
-    void split(int x,int y){
-        makeroot(x);
-        access(y);splay(y);
-    }
-    int findroot(int p){
-        access(p);splay(p);
-        while(C(p,0)){pushdown(p);p = C(p,0);}
-        splay(p);return p;
-    }
-    bool check(int x,int y){makeroot(x);return findroot(y) == x;}
-    bool link(int x,int y){
-        makeroot(x);if(findroot(y) == x)return false;
-        // puts("11242324314312423141234123");
-        FA(x) = y;return true;
-    }
-    void cut(int x,int y){
-        if(findroot(x) != findroot(y))return;
-        split(x, y);if(FA(x) != y || C(x, 1))return;
-        FA(x) = C(y,0) = 0;
-        maintain(x);maintain(y);
-    }
-}lct;
-int n, m;
-struct Segment_Tree{
-    struct node{
-        int minn, cnt;int tag;
-        node(int minn = 0x3f3f3f3f,int cnt = 1,int tag = 0):minn(minn),cnt(cnt),tag(tag){}
-    }d[maxn << 2];
-    node mergenode(node l,node r){
-        node ans = l;
-        if(l.minn > r.minn){ans = r;}
-        if(l.minn == r.minn){ans.cnt += r.cnt;}
-        ans.tag = 0;return ans;
-    }
-    void change(int p,int upd){if(p >= maxn)return;d[p].minn += upd;d[p].tag += upd;}
-    void pushdown(int p){
-        if(d[p].tag){
-            change(p << 1,d[p].tag); change(p << 1 | 1,d[p].tag); d[p].tag = 0;
-        }
-    }
-    void build(int l,int r,int p){
-        if(l == r){d[p] = node(0);return;}
-        int mid = l + r >> 1;
-        build(l,mid,p << 1); build(mid + 1,r,p << 1 | 1);
-        d[p] = mergenode(d[p << 1],d[p << 1 | 1]);
-    }
-    void update(int l,int r,int s,int t,int p,int upd){
-        // printf("l = %d  r = %d s = %d t = %d, p = %d,upd = %d\n",l,r,s,t,p,upd);
-        if(s <= l && r <= t){change(p,upd);return;}
-        int mid = l + r >> 1;pushdown(p);
-        if(s <= mid)update(l,mid,s,t,p << 1,upd);
-        if(mid < t)update(mid + 1,r,s,t,p << 1 | 1,upd);
-        d[p] = mergenode(d[p << 1],d[p << 1 | 1]);
-    }
-    node query(int l,int r,int s,int t,int p){
-        if(s <= l && r <= t)return d[p];
-        int mid = l + r >> 1;pushdown(p);
-        if(t <= mid)return query(l,mid,s,t,p << 1);
-        if(mid < s)return query(mid + 1,r,s,t,p << 1 | 1);
-        return mergenode(query(l,mid,s,t,p << 1),query(mid + 1,r,s,t,p << 1 | 1));
-    }
-    void update(int l,int r,int upd){if(l > r)return;update(1,n,l,r,1,upd);}
-    node query(int l,int r){return query(1,n,l,r,1);}
-    void DEBUG(int l = 1,int r = n,int p = 1){
-        printf("[%d,%d],p = %d,minn = %d,cnt = %d,tag = %d\n",l,r,p,d[p].minn,d[p].cnt,d[p].tag);
-        if(l == r)return;int mid = l + r >> 1;
-        DEBUG(l,mid,p << 1);DEBUG(mid + 1,r,p << 1 | 1);
-    }
-}tree;
-int a[1001][1001];
-const int dx[4] = {-1, 0, 0, 1};
-const int dy[4] = { 0, 1,-1, 0};
-vector<int> edg[maxn];
-int R[maxn];
-signed main(){
-    n = 20;
-    tree.build(1,n,1);
-    tree.update(1,5,10);
-    tree.update(3, 10,-11);
-    tree.update(1,20,12);
-    printf("%d\n",tree.query(1,n).minn);
-    for(int i = 1;i <= n;i++){printf("%d ",tree.query(i,i).minn);}
-    return 0;
+
+void dfs1(int x,int f)
+{
+	dep[x]=dep[f]+1;
+	fa[x]=f;
+	siz[x]=1;
+	for(int i=head[x];i;i=nex[i])
+	{
+		int v=to[i];
+		if(v==f)
+		{
+			continue;
+		}
+		dfs1(v,x);
+		tmp[v]=val[i];
+		siz[x]+=siz[v];
+		if(siz[son[x]]<siz[v])
+		{
+			son[x]=v;
+		}
+	}
 }
+
+void dfs2(int x,int topf)
+{
+	dfn[x]=++idx;
+	w[idx]=tmp[x];
+	top[x]=topf;
+	if(son[x])
+	{
+		dfs2(son[x],topf);
+	}
+	for(int i=head[x];i;i=nex[i])
+	{
+		int v=to[i];
+		if(top[v])
+		{
+			continue;
+		}
+		dfs2(v,v);
+	}
+	return ;
+}
+
+void pushup(int rt)
+{
+	sumn[rt]=sumn[rt<<1]+sumn[rt<<1|1];
+	maxn[rt]=max(maxn[rt<<1],maxn[rt<<1|1]);
+	minn[rt]=min(minn[rt<<1],minn[rt<<1|1]);
+}
+
+void build(int rt,int l,int r)
+{
+	if(l==r)
+	{
+		sumn[rt]=maxn[rt]=minn[rt]=w[l];
+		return ;
+	}
+	int mid=(l+r)>>1; 
+	build(rt<<1,l,mid);
+	build(rt<<1|1,mid+1,r);
+	pushup(rt);
+}
+
+void pushdown(int rt)
+{
+	lz[rt<<1]^=1;
+	lz[rt<<1|1]^=1;
+	sumn[rt<<1]=-sumn[rt<<1];
+	sumn[rt<<1|1]=-sumn[rt<<1|1];
+	maxn[rt<<1]=-maxn[rt<<1];
+	maxn[rt<<1|1]=-maxn[rt<<1|1];
+	minn[rt<<1]=-minn[rt<<1];
+	minn[rt<<1|1]=-minn[rt<<1|1];
+    swap(minn[rt<<1|1],maxn[rt<<1|1]);
+    swap(minn[rt<<1],maxn[rt<<1]);
+	lz[rt]=0;
+}
+
+void update(int rt,int l,int r,int q,int k)
+{
+	if(l==r)
+	{
+		sumn[rt]=maxn[rt]=minn[rt]=k;
+		return ;
+	}
+	if(lz[rt])
+	{
+		pushdown(rt);
+	}
+	int mid=(l+r)>>1;
+	if(q<=mid)
+	{
+		update(rt<<1,l,mid,q,k);
+	}
+	else
+	{
+		update(rt<<1|1,mid+1,r,q,k);
+	}
+	pushup(rt); 
+}
+
+void change(int rt,int l,int r,int L,int R)
+{
+	if(L<=l&&r<=R)
+	{
+		lz[rt]^=1;
+		sumn[rt]=-sumn[rt];
+		maxn[rt]=-maxn[rt];
+		minn[rt]=-minn[rt];
+		swap(maxn[rt],minn[rt]);
+		return ;
+	}
+	if(lz[rt])
+	{
+		pushdown(rt);
+	}
+	int mid=(l+r)>>1;
+	if(L<=mid)
+	{
+		change(rt<<1,l,mid,L,R);
+	}
+	if(R>mid)
+	{
+		change(rt<<1|1,mid+1,r,L,R);
+	}
+	pushup(rt);
+}
+
+int qsum(int rt,int l,int r,int L,int R)
+{
+	int res=0;
+	if(L<=l&&r<=R)
+	{
+		return sumn[rt];
+	}
+	if(lz[rt])
+	{
+		pushdown(rt);
+	}
+	int mid=(l+r)>>1;
+	if(L<=mid)
+	{
+		res+=qsum(rt<<1,l,mid,L,R);
+	}
+	if(R>mid)
+	{
+		res+=qsum(rt<<1|1,mid+1,r,L,R);
+	}
+	pushup(rt);
+	return res;
+}
+
+int qmax(int rt,int l,int r,int L,int R)
+{
+	int res=-1e10;
+	if(L<=l&&r<=R)
+	{
+		return maxn[rt];
+	}
+	if(lz[rt])
+	{
+		pushdown(rt);
+	}
+	int mid=(l+r)>>1;
+	if(L<=mid)
+	{
+		res=max(res,qmax(rt<<1,l,mid,L,R));
+	}
+	if(R>mid)
+	{
+		res=max(res,qmax(rt<<1|1,mid+1,r,L,R));
+	}
+	pushup(rt);
+	return res;
+}
+
+inline int qmin(int rt,int l,int r,int L,int R){
+	int res=2147483647;
+	if(L<=l&&r<=R) return minn[rt];
+	if(lz[rt]) pushdown(rt);
+	int mid=(l+r)>>1;
+	if(L<=mid) res=min(res,qmin(rt<<1,l,mid,L,R));
+	if(R>mid)  res=min(res,qmin(rt<<1|1,mid+1,r,L,R));
+	pushup(rt);
+	return res;
+}
+//以上是线段树
+//以下是树链剖分
+void update(int x,int y)
+{
+	while(top[x]!=top[y])
+	{
+		if(dep[top[x]]<dep[top[y]]) swap(x,y);
+		change(1,1,n,dfn[top[x]],dfn[x]);
+		x=fa[top[x]];
+	}
+	if(dep[x]>dep[y]) swap(x,y);
+	if(x!=y) change(1,1,n,dfn[x]+1,dfn[y]);
+}
+
+int qsum(int x,int y)
+{
+	int res=0;
+	while(top[x]!=top[y])
+	{
+		if(dep[top[x]]<dep[top[y]]) swap(x,y);
+		res+=qsum(1,1,n,dfn[top[x]],dfn[x]);
+		x=fa[top[x]];
+	}
+	if(dep[x]>dep[y]) swap(x,y);
+	if(x!=y) res+=qsum(1,1,n,dfn[x]+1,dfn[y]);
+	return res;
+}
+
+int qmax(int x,int y)
+{
+	int res=-2147483647;
+	while(top[x]!=top[y])
+	{
+		if(dep[top[x]]<dep[top[y]]) swap(x,y);
+		res=max(res,qmax(1,1,n,dfn[top[x]],dfn[x]));
+		x=fa[top[x]];
+	}
+	if(dep[x]>dep[y]) swap(x,y);
+	if(x!=y) res=max(res,qmax(1,1,n,dfn[x]+1,dfn[y]));
+	return res;
+}
+
+int qmin(int x,int y)
+{
+	int res=2147483647;
+	while(top[x]!=top[y])
+	{
+		if(dep[top[x]]<dep[top[y]]) swap(x,y);
+		res=min(res,qmin(1,1,n,dfn[top[x]],dfn[x]));
+		x=fa[top[x]];
+	}
+	if(dep[x]>dep[y]) swap(x,y);
+	if(x!=y) res=min(res,qmin(1,1,n,dfn[x]+1,dfn[y]));
+	return res;
+}
+signed main()
+{
+	//freopen("1.in", "r", stdin);
+	//freopen("ccc.out","w",stdout);
+    cin>>n;
+    for(int i=1;i<n;i++)
+    {
+    	int a,b,c;
+    	cin>>a>>b>>c;
+    	a++,b++;
+    	add(a,b,c);
+    	add(b,a,c);
+    	id[i].x=a;
+    	id[i].y=b;
+	}
+	dfs1(1,0);
+	//cout<<1; 
+	dfs2(1,1);
+	//cout<<1;
+	build(1,1,n);
+	cin>>m;
+	while(m--)
+	{
+		char s[10];
+		int a,b;
+		cin>>s;
+		//cout<<s<<'\n';
+		cin>>a>>b;
+		if(s[0]=='C')
+		{
+			int mp;
+			if(dep[id[a].x]>dep[id[a].y])
+			{
+				mp=id[a].x;
+			}
+			else
+			{
+				mp=id[a].y;
+			}
+			update(1,1,n,dfn[mp],b);
+		}
+		else if(s[0]=='N')
+		{
+			a++,b++;
+			update(a,b);
+		}
+		else if(s[0]=='S')
+		{
+			a++,b++;
+			cout<<qsum(a,b)<<endl;
+		}
+		else if(s[2]=='X')
+		{
+			a++;
+			b++;
+			cout<<qmax(a,b)<<endl;
+		}
+		else if(s[2]=='N')
+		{
+			a++;
+			b++;
+			cout<<qmin(a,b)<<endl; 
+		}
+	}
+	return 0;
+}
+
