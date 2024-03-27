@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/desktop/Desktop/Call_me_Eric/Call_me_Eric-s-Codes",
-      "program": "d:/desktop/Desktop/Call_me_Eric/Call_me_Eric-s-Codes/build/Debug/outDebug",
+      "cwd": "d:/desktop/Desktop/Call_me_Eric/Call_me_Eric-s-Codes/历次模拟/2024.3.26模拟",
+      "program": "d:/desktop/Desktop/Call_me_Eric/Call_me_Eric-s-Codes/历次模拟/2024.3.26模拟/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
